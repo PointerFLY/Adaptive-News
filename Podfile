@@ -10,4 +10,5 @@ target 'hawkEye' do
     pod 'SVProgressHUD', '~> 2.2.5'
     pod 'SnapKit', '~> 4.0.0'
     pod 'BlocksKit', '~> 2.2.5'
+    pod 'KeychainAccess', '~> 3.1.0'
 end

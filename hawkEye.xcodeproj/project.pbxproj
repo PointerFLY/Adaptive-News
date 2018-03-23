@@ -12,6 +12,11 @@
 		355337F3206511A8002DC6C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 355337F2206511A8002DC6C2 /* Assets.xcassets */; };
 		355337F6206511A8002DC6C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 355337F4206511A8002DC6C2 /* LaunchScreen.storyboard */; };
 		35533801206511A8002DC6C2 /* hawkEyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35533800206511A8002DC6C2 /* hawkEyeTests.swift */; };
+		3553380F20653D05002DC6C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553380E20653D05002DC6C2 /* LoginViewController.swift */; };
+		3553381120653D17002DC6C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381020653D17002DC6C2 /* HomeViewController.swift */; };
+		35533813206542CE002DC6C2 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35533812206542CE002DC6C2 /* AccountManager.swift */; };
+		3553381520654467002DC6C2 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381420654467002DC6C2 /* KeyValueStore.swift */; };
+		35533817206547F9002DC6C2 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35533816206547F9002DC6C2 /* NotificationNames.swift */; };
 		C5C15C6B0840D2C07720BA0B /* Pods_hawkEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +41,11 @@
 		355337FC206511A8002DC6C2 /* hawkEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hawkEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35533800206511A8002DC6C2 /* hawkEyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hawkEyeTests.swift; sourceTree = "<group>"; };
 		35533802206511A8002DC6C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3553380E20653D05002DC6C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3553381020653D17002DC6C2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		35533812206542CE002DC6C2 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		3553381420654467002DC6C2 /* KeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
+		35533816206547F9002DC6C2 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hawkEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2EEDB5CA8E2D3FCE08BF81 /* Pods-hawkEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hawkEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +95,11 @@
 				3553380D206521CE002DC6C2 /* Support Files */,
 				355337EB206511A8002DC6C2 /* AppDelegate.swift */,
 				355337ED206511A8002DC6C2 /* RootViewController.swift */,
+				3553380E20653D05002DC6C2 /* LoginViewController.swift */,
+				3553381020653D17002DC6C2 /* HomeViewController.swift */,
+				35533812206542CE002DC6C2 /* AccountManager.swift */,
+				3553381420654467002DC6C2 /* KeyValueStore.swift */,
+				35533816206547F9002DC6C2 /* NotificationNames.swift */,
 			);
 			path = hawkEye;
 			sourceTree = "<group>";
@@ -253,6 +268,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Log/Log.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -264,6 +280,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Log.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -298,8 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35533813206542CE002DC6C2 /* AccountManager.swift in Sources */,
+				35533817206547F9002DC6C2 /* NotificationNames.swift in Sources */,
+				3553381520654467002DC6C2 /* KeyValueStore.swift in Sources */,
+				3553380F20653D05002DC6C2 /* LoginViewController.swift in Sources */,
 				355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */,
 				355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */,
+				3553381120653D17002DC6C2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
