@@ -18,8 +18,13 @@ class AccountManager {
         return KeyValueStore.token != nil
     }
     
+    func login() {
+        KeyValueStore.token = "Fake Token";
+        NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
+    }
+    
     func logout() {
         KeyValueStore.token = nil
-        NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: nil);
+        NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self);
     }
 }

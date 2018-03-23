@@ -9,5 +9,5 @@
 import Foundation
 
 struct NotificationNames {
-    static let kLoginStatusChanged = Notification.Name(rawValue: "LoginStatusChanged")
+    static let kLoginStatusChanged = Notification.Name(rawValue: "kLoginStatusChanged")
 }
