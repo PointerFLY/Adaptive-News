@@ -1,0 +1,49 @@
+PODS:
+  - Alamofire (4.7.0)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - Log (1.0)
+  - Realm (3.3.0):
+    - Realm/Headers (= 3.3.0)
+  - Realm/Headers (3.3.0)
+  - RealmSwift (3.3.0):
+    - Realm (= 3.3.0)
+  - SnapKit (4.0.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftyUserDefaults (3.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - BlocksKit (~> 2.2.5)
+  - Log (~> 1.0)
+  - RealmSwift (~> 3.1)
+  - SnapKit (~> 4.0.0)
+  - SVProgressHUD (~> 2.2.5)
+  - SwiftyUserDefaults (~> 3.0.1)
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Log: 5e368c9528db07517d18d2d04ff5fe2b6f5a1e21
+  Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
+  RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+
+PODFILE CHECKSUM: a4bbef6c29cc48f1f37c67fecb2742a0979eb819
+
+COCOAPODS: 1.4.0
