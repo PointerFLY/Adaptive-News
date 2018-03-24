@@ -19,5 +19,10 @@ class HomeViewController: UIViewController {
     private func setupNavigation() {
         self.navigationItem.title = "Home"
         self.view.backgroundColor = UIColor.green
+        let item = UIBarButtonItem()
+        item.bk_init(withTitle: "me", style: .plain) { _ in
+            self.navigationController?.pushViewController(ProfileViewController(), animated: true);
+        }
+        self.navigationItem.rightBarButtonItem = item
     }
 }

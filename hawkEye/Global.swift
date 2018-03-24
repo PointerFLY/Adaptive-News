@@ -14,6 +14,8 @@ let Log = Logger()
 struct G {
     static func setup() {
         #if DEBUG
+            Log.enabled = true
+        #else
             Log.enabled = false
         #endif
     }

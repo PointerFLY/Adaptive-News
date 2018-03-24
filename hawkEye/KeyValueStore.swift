@@ -13,6 +13,7 @@ import Log
 
 extension DefaultsKeys {
     static let userName = DefaultsKey<String?>("userName")
+    static let token = DefaultsKey<String?>("token")
 }
 
 class KeyValueStore {
@@ -20,7 +21,7 @@ class KeyValueStore {
     private static let keychain = Keychain(service: Bundle.main.bundleIdentifier!)
     
     private struct KeychainKeys {
-        static let kToken = "kToken"
+        
     }
     
     static var userName: String? {
@@ -35,24 +36,11 @@ class KeyValueStore {
     
     static var token: String? {
         get {
-            do {
-                return try keychain.get(KeychainKeys.kToken)
-            } catch let error {
-                Log.error(error, "Keychain get value failed!")
-            }
-            
-            return nil
+            return Defaults[.token]
         }
         set {
-            do {
-                if let value = newValue {
-                    try keychain.set(value, key: KeychainKeys.kToken)
-                } else {
-                    try keychain.remove(KeychainKeys.kToken)
-                }
-            } catch let error {
-                Log.error(error, "Keychain set value failed!")
-            }
+            Defaults[.token] = newValue
+            Defaults.synchronize()
         }
     }
 }

@@ -53,7 +53,7 @@ class RootViewController: UIViewController {
     
     @objc
     private func flipIfNeeded() {
-        if AccountManager.shared.isLogin && (_activeViewController === _loginViewController) {
+        if AccountManager.shared.isLogin && (_activeViewController === _loginNavigationController) {
             self.transition(from: _loginNavigationController,
                             to: _homeNavigationController,
                             duration: 1.0,
@@ -62,10 +62,10 @@ class RootViewController: UIViewController {
                             completion: { _ in
                 self._activeViewController = self._homeNavigationController
             })
-        } else if !AccountManager.shared.isLogin && (_activeViewController === _homeViewController) {
+        } else if !AccountManager.shared.isLogin && (_activeViewController === _homeNavigationController) {
             self.transition(from: _loginNavigationController,
                             to: _homeNavigationController,
-                            duration: 1.0, options: [.transitionFlipFromLeft, .curveEaseInOut],
+                            duration: 1.0, options: [.transitionFlipFromRight, .curveEaseInOut],
                             animations: nil,
                             completion: { _ in
                 self._activeViewController = self._loginNavigationController
