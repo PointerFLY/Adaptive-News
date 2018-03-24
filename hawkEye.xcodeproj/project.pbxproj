@@ -152,21 +152,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		3553382620667822002DC6C2 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				355337ED206511A8002DC6C2 /* RootViewController.swift */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
 		355338272066782C002DC6C2 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				3553382620667822002DC6C2 /* Root */,
 				355338252066780F002DC6C2 /* Profile */,
 				3553382320667803002DC6C2 /* Login */,
 				35533821206677F2002DC6C2 /* Home */,
+				355337ED206511A8002DC6C2 /* RootViewController.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";

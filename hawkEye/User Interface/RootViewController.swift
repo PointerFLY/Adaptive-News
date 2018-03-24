@@ -11,22 +11,11 @@ import BlocksKit
 
 class RootViewController: UIViewController {
     
-    private let _loginViewController = LoginViewController()
-    private let _homeViewController = HomeViewController()
-    
     private var _loginNavigationController: UINavigationController!
     private var _homeNavigationController: UINavigationController!
     
-    private var _activeViewController: UINavigationController!
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
-        
-        _loginNavigationController = UINavigationController(rootViewController: _loginViewController)
-        _homeNavigationController = UINavigationController(rootViewController: _homeViewController)
-        
-        self.addChildViewController(_loginNavigationController)
-        self.addChildViewController(_homeNavigationController)
         
         NotificationCenter.default.addObserver(self, selector: #selector(flipIfNeeded), name: NotificationNames.kLoginStatusChanged, object: nil)
     }
@@ -43,32 +32,40 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         
         if AccountManager.shared.isLogin {
+            _homeNavigationController = UINavigationController(rootViewController: HomeViewController())
+            self.addChildViewController(_homeNavigationController)
             self.view.addSubview(_homeNavigationController.view)
-            _activeViewController = _homeNavigationController
         } else {
+            _loginNavigationController = UINavigationController(rootViewController: LoginViewController())
+            self.addChildViewController(_loginNavigationController)
             self.view.addSubview(_loginNavigationController.view)
-            _activeViewController = _loginNavigationController
         }
     }
     
     @objc
     private func flipIfNeeded() {
-        if AccountManager.shared.isLogin && (_activeViewController === _loginNavigationController) {
+        if AccountManager.shared.isLogin && (self.childViewControllers.first! === _loginNavigationController) {
+            _homeNavigationController = UINavigationController(rootViewController: HomeViewController())
+            self.addChildViewController(_homeNavigationController)
             self.transition(from: _loginNavigationController,
                             to: _homeNavigationController,
                             duration: 1.0,
                             options: [.transitionFlipFromLeft, .curveEaseInOut],
                             animations: nil,
                             completion: { _ in
-                self._activeViewController = self._homeNavigationController
+                                self._loginNavigationController.removeFromParentViewController()
+                                self._loginNavigationController = nil
             })
-        } else if !AccountManager.shared.isLogin && (_activeViewController === _homeNavigationController) {
-            self.transition(from: _loginNavigationController,
-                            to: _homeNavigationController,
+        } else if !AccountManager.shared.isLogin && (self.childViewControllers.first === _homeNavigationController) {
+            _loginNavigationController = UINavigationController(rootViewController: LoginViewController())
+            self.addChildViewController(_loginNavigationController)
+            self.transition(from: _homeNavigationController,
+                            to: _loginNavigationController,
                             duration: 1.0, options: [.transitionFlipFromRight, .curveEaseInOut],
                             animations: nil,
                             completion: { _ in
-                self._activeViewController = self._loginNavigationController
+                                self._homeNavigationController.removeFromParentViewController()
+                                self._homeNavigationController = nil
             })
         }
     }
