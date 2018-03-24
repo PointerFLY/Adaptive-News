@@ -19,7 +19,7 @@
 		35533817206547F9002DC6C2 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35533816206547F9002DC6C2 /* NotificationNames.swift */; };
 		3553381920654E91002DC6C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381820654E91002DC6C2 /* ProfileViewController.swift */; };
 		3553381B206552DF002DC6C2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381A206552DF002DC6C2 /* Global.swift */; };
-		3553381D2065571C002DC6C2 /* NewsRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsRetriever.swift */; };
+		3553381E2066757A002DC6C2 /* NewsRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsRetriever.swift */; };
 		C5C15C6B0840D2C07720BA0B /* Pods_hawkEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,17 +98,13 @@
 		355337EA206511A8002DC6C2 /* hawkEye */ = {
 			isa = PBXGroup;
 			children = (
+				3553382B20667879002DC6C2 /* Manager */,
+				3553382A20667869002DC6C2 /* Networking */,
+				3553382920667850002DC6C2 /* Global */,
+				3553382820667842002DC6C2 /* Persistence */,
+				355338272066782C002DC6C2 /* User Interface */,
 				3553380D206521CE002DC6C2 /* Support Files */,
 				355337EB206511A8002DC6C2 /* AppDelegate.swift */,
-				355337ED206511A8002DC6C2 /* RootViewController.swift */,
-				3553380E20653D05002DC6C2 /* LoginViewController.swift */,
-				3553381020653D17002DC6C2 /* HomeViewController.swift */,
-				35533812206542CE002DC6C2 /* AccountManager.swift */,
-				3553381420654467002DC6C2 /* KeyValueStore.swift */,
-				35533816206547F9002DC6C2 /* NotificationNames.swift */,
-				3553381820654E91002DC6C2 /* ProfileViewController.swift */,
-				3553381A206552DF002DC6C2 /* Global.swift */,
-				3553381C2065571C002DC6C2 /* NewsRetriever.swift */,
 			);
 			path = hawkEye;
 			sourceTree = "<group>";
@@ -130,6 +126,82 @@
 				355337F2206511A8002DC6C2 /* Assets.xcassets */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		35533821206677F2002DC6C2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3553381020653D17002DC6C2 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3553382320667803002DC6C2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3553380E20653D05002DC6C2 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		355338252066780F002DC6C2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3553381820654E91002DC6C2 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		3553382620667822002DC6C2 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				355337ED206511A8002DC6C2 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		355338272066782C002DC6C2 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				3553382620667822002DC6C2 /* Root */,
+				355338252066780F002DC6C2 /* Profile */,
+				3553382320667803002DC6C2 /* Login */,
+				35533821206677F2002DC6C2 /* Home */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		3553382820667842002DC6C2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3553381420654467002DC6C2 /* KeyValueStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		3553382920667850002DC6C2 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				3553381A206552DF002DC6C2 /* Global.swift */,
+				35533816206547F9002DC6C2 /* NotificationNames.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		3553382A20667869002DC6C2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3553381C2065571C002DC6C2 /* NewsRetriever.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		3553382B20667879002DC6C2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				35533812206542CE002DC6C2 /* AccountManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		B06E1FDD6843BC81D99E6BCC /* Pods */ = {
@@ -324,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3553381E2066757A002DC6C2 /* NewsRetriever.swift in Sources */,
 				35533813206542CE002DC6C2 /* AccountManager.swift in Sources */,
 				35533817206547F9002DC6C2 /* NotificationNames.swift in Sources */,
 				3553381520654467002DC6C2 /* KeyValueStore.swift in Sources */,
@@ -331,7 +404,6 @@
 				3553381B206552DF002DC6C2 /* Global.swift in Sources */,
 				355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */,
 				355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */,
-				3553381D2065571C002DC6C2 /* NewsRetriever.swift in Sources */,
 				3553381920654E91002DC6C2 /* ProfileViewController.swift in Sources */,
 				3553381120653D17002DC6C2 /* HomeViewController.swift in Sources */,
 			);
