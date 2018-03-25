@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Hue
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -20,8 +21,8 @@ class LoginViewController: UIViewController {
         setupEvents();
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         _userNameTextField.becomeFirstResponder()
     }
     
@@ -65,9 +66,23 @@ class LoginViewController: UIViewController {
     }
     
     private func setupEvents() {
-        _loginButton.bk_(whenTapped: {
+        _loginButton.bk_(whenTapped: { [weak self] in
+            guard let strongSelf = self else { return }
+            guard strongSelf.checkInput() else { return }
             AccountManager.shared.login()
         })
+    }
+    
+    private func checkInput() -> Bool {
+        if _userNameTextField.text == "" {
+            SVProgressHUD.showError(withStatus: "Empty user name")
+            return false
+        } else if _passwordTextField.text == "" {
+            SVProgressHUD.showError(withStatus: "Empty password")
+            return false
+        }
+        
+        return true
     }
     
     private let _userNameTextField: UITextField = {

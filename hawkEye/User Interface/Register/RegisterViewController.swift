@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RegisterViewController: UIViewController {
 
@@ -18,8 +19,8 @@ class RegisterViewController: UIViewController {
         setupEvents();
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         _userNameTextField.becomeFirstResponder()
     }
     
@@ -57,9 +58,23 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupEvents() {
-        _registerButton.bk_(whenTapped: {
+        _registerButton.bk_(whenTapped: { [weak self] in
+            guard let strongSelf = self else { return }
+            guard strongSelf.checkInput() else { return }
             AccountManager.shared.register()
         })
+    }
+    
+    private func checkInput() -> Bool {
+        if _userNameTextField.text == "" {
+            SVProgressHUD.showError(withStatus: "Empty user name")
+            return false
+        } else if _passwordTextField.text == "" {
+            SVProgressHUD.showError(withStatus: "Empty password")
+            return false
+        }
+        
+        return true
     }
     
     private let _userNameTextField: UITextField = {

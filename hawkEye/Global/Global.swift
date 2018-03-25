@@ -8,6 +8,7 @@
 
 import UIKit
 import Log
+import SVProgressHUD
 
 let Log = Logger()
 
@@ -15,6 +16,8 @@ struct G {
     static func setup() {
         UIApplication.shared.statusBarStyle = .lightContent
         UIBarButtonItem.appearance().setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 16)], for: .normal)
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setMaximumDismissTimeInterval(1.5)
         
         #if DEBUG
             Log.enabled = true
