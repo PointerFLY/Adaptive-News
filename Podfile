@@ -13,4 +13,5 @@ target 'hawkEye' do
     pod 'KeychainAccess', '~> 3.1.0'
     pod 'Hue', '~> 3.0.1'
     pod 'SwiftyImage', '~> 1.2'
+    pod 'Koloda', '~> 4.3.1'
 end
