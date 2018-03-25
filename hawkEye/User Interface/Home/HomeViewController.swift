@@ -14,15 +14,19 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigation()
+        setupUI()
     }
     
     private func setupNavigation() {
-        self.navigationItem.title = "Home"
-        self.view.backgroundColor = UIColor.green
+        self.navigationItem.title = "HawkEye NEWS"
         let item = UIBarButtonItem()
-        item.bk_init(withTitle: "me", style: .plain) { _ in
+        item.bk_init(with: UIImage(named: "btn_me")!, style: .plain) { _ in
             self.navigationController?.pushViewController(ProfileViewController(), animated: true);
         }
         self.navigationItem.rightBarButtonItem = item
+    }
+    
+    private func setupUI() {
+        self.view.backgroundColor = G.UI.kViewColorDefault
     }
 }
