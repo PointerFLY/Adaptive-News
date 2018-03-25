@@ -13,11 +13,19 @@ let Log = Logger()
 
 struct G {
     static func setup() {
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         #if DEBUG
             Log.enabled = true
         #else
             Log.enabled = false
         #endif
+        
+    }
+    
+    struct UI {
+        static let kViewColorDefault = UIColor(hex: "e5e5e5")
+        static let kThemeColor = UIColor(hex: "cd2829")
     }
 }
 

@@ -11,4 +11,6 @@ target 'hawkEye' do
     pod 'SnapKit', '~> 4.0.0'
     pod 'BlocksKit', '~> 2.2.5'
     pod 'KeychainAccess', '~> 3.1.0'
+    pod 'Hue', '~> 3.0.1'
+    pod 'SwiftyImage', '~> 1.2'
 end

@@ -21,6 +21,7 @@
 		3553381B206552DF002DC6C2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381A206552DF002DC6C2 /* Global.swift */; };
 		3553381E2066757A002DC6C2 /* NewsRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsRetriever.swift */; };
 		3553382E2066932C002DC6C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553382D2066932C002DC6C2 /* Gender.swift */; };
+		35EEEAED2067CAE00037B975 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAEC2067CAE00037B975 /* NavigationController.swift */; };
 		C5C15C6B0840D2C07720BA0B /* Pods_hawkEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		3553381A206552DF002DC6C2 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		3553381C2065571C002DC6C2 /* NewsRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRetriever.swift; sourceTree = "<group>"; };
 		3553382D2066932C002DC6C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		35EEEAEC2067CAE00037B975 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hawkEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2EEDB5CA8E2D3FCE08BF81 /* Pods-hawkEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hawkEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 		355337EA206511A8002DC6C2 /* hawkEye */ = {
 			isa = PBXGroup;
 			children = (
+				35EEEAEE2067CBE80037B975 /* Extensions */,
 				3553382B20667879002DC6C2 /* Manager */,
 				3553382A20667869002DC6C2 /* Networking */,
 				3553382920667850002DC6C2 /* Global */,
@@ -157,6 +160,7 @@
 		355338272066782C002DC6C2 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				35EEEAEB2067CACB0037B975 /* Common */,
 				355338252066780F002DC6C2 /* Profile */,
 				3553382320667803002DC6C2 /* Login */,
 				35533821206677F2002DC6C2 /* Home */,
@@ -197,6 +201,21 @@
 				35533812206542CE002DC6C2 /* AccountManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		35EEEAEB2067CACB0037B975 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				35EEEAEC2067CAE00037B975 /* NavigationController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		35EEEAEE2067CBE80037B975 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B06E1FDD6843BC81D99E6BCC /* Pods */ = {
@@ -344,24 +363,28 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Log/Log.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyImage/SwiftyImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Log.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3553381E2066757A002DC6C2 /* NewsRetriever.swift in Sources */,
+				35EEEAED2067CAE00037B975 /* NavigationController.swift in Sources */,
 				3553382E2066932C002DC6C2 /* Gender.swift in Sources */,
 				35533813206542CE002DC6C2 /* AccountManager.swift in Sources */,
 				35533817206547F9002DC6C2 /* NotificationNames.swift in Sources */,

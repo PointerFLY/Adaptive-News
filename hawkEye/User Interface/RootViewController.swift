@@ -11,8 +11,8 @@ import BlocksKit
 
 class RootViewController: UIViewController {
     
-    private var _loginNavigationController: UINavigationController!
-    private var _homeNavigationController: UINavigationController!
+    private var _loginNavigationController: NavigationController!
+    private var _homeNavigationController: NavigationController!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
@@ -32,11 +32,11 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         
         if AccountManager.shared.isLogin {
-            _homeNavigationController = UINavigationController(rootViewController: HomeViewController())
+            _homeNavigationController = NavigationController(rootViewController: HomeViewController())
             self.addChildViewController(_homeNavigationController)
             self.view.addSubview(_homeNavigationController.view)
         } else {
-            _loginNavigationController = UINavigationController(rootViewController: LoginViewController())
+            _loginNavigationController = NavigationController(rootViewController: LoginViewController())
             self.addChildViewController(_loginNavigationController)
             self.view.addSubview(_loginNavigationController.view)
         }
@@ -45,7 +45,7 @@ class RootViewController: UIViewController {
     @objc
     private func flipIfNeeded() {
         if AccountManager.shared.isLogin && (self.childViewControllers.first! === _loginNavigationController) {
-            _homeNavigationController = UINavigationController(rootViewController: HomeViewController())
+            _homeNavigationController = NavigationController(rootViewController: HomeViewController())
             self.addChildViewController(_homeNavigationController)
             self.transition(from: _loginNavigationController,
                             to: _homeNavigationController,
@@ -57,7 +57,7 @@ class RootViewController: UIViewController {
                                 self._loginNavigationController = nil
             })
         } else if !AccountManager.shared.isLogin && (self.childViewControllers.first === _homeNavigationController) {
-            _loginNavigationController = UINavigationController(rootViewController: LoginViewController())
+            _loginNavigationController = NavigationController(rootViewController: LoginViewController())
             self.addChildViewController(_loginNavigationController)
             self.transition(from: _homeNavigationController,
                             to: _loginNavigationController,

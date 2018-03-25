@@ -15,6 +15,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - Hue (3.0.1)
   - KeychainAccess (3.1.0)
   - Log (1.0)
   - Realm (3.3.0):
@@ -24,29 +25,34 @@ PODS:
     - Realm (= 3.3.0)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
+  - SwiftyImage (1.2.0)
   - SwiftyUserDefaults (3.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - BlocksKit (~> 2.2.5)
+  - Hue (~> 3.0.1)
   - KeychainAccess (~> 3.1.0)
   - Log (~> 1.0)
   - RealmSwift (~> 3.1)
   - SnapKit (~> 4.0.0)
   - SVProgressHUD (~> 2.2.5)
+  - SwiftyImage (~> 1.2)
   - SwiftyUserDefaults (~> 3.0.1)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Log: 5e368c9528db07517d18d2d04ff5fe2b6f5a1e21
   Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
   RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyImage: ebaa7c7b6163cd4ad102f3bb05a8fb276d35b4f3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 3310243e1377f457d20aa030dd8dc9afdd7d6da8
+PODFILE CHECKSUM: dc81d1c3883d94c18c074a050ff2972a28174ea2
 
 COCOAPODS: 1.4.0
