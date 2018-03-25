@@ -21,7 +21,7 @@ class ProfileViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Me"
+        self.title = "ME"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,10 +66,11 @@ class ProfileViewController: UITableViewController {
         
         switch (indexPath.section, indexPath.row) {
         case (1, 0):
-            let alertController = UIAlertController(title: "Are you sure?", message: "You data might be cleaned if you sign out.", preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: "Are you sure?", message: "Local data will be restored when you sign in again. However, your local data will be cleaned when another user signed in.", preferredStyle: .actionSheet)
             alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in
                 AccountManager.shared.logout()
             }))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alertController, animated: true, completion: nil)
         default:
             break
