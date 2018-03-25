@@ -22,6 +22,7 @@
 		3553381E2066757A002DC6C2 /* NewsRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsRetriever.swift */; };
 		3553382E2066932C002DC6C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553382D2066932C002DC6C2 /* Gender.swift */; };
 		35EEEAED2067CAE00037B975 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAEC2067CAE00037B975 /* NavigationController.swift */; };
+		35EEEAF32067D4F40037B975 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAF22067D4F40037B975 /* RegisterViewController.swift */; };
 		C5C15C6B0840D2C07720BA0B /* Pods_hawkEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		3553381C2065571C002DC6C2 /* NewsRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRetriever.swift; sourceTree = "<group>"; };
 		3553382D2066932C002DC6C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		35EEEAEC2067CAE00037B975 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		35EEEAF22067D4F40037B975 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hawkEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2EEDB5CA8E2D3FCE08BF81 /* Pods-hawkEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hawkEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 		355338272066782C002DC6C2 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				35EEEAF12067D4E40037B975 /* Register */,
 				35EEEAEB2067CACB0037B975 /* Common */,
 				355338252066780F002DC6C2 /* Profile */,
 				3553382320667803002DC6C2 /* Login */,
@@ -216,6 +219,14 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		35EEEAF12067D4E40037B975 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				35EEEAF22067D4F40037B975 /* RegisterViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		B06E1FDD6843BC81D99E6BCC /* Pods */ = {
@@ -424,6 +435,7 @@
 				3553381B206552DF002DC6C2 /* Global.swift in Sources */,
 				355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */,
 				355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */,
+				35EEEAF32067D4F40037B975 /* RegisterViewController.swift in Sources */,
 				3553381920654E91002DC6C2 /* ProfileViewController.swift in Sources */,
 				3553381120653D17002DC6C2 /* HomeViewController.swift in Sources */,
 			);

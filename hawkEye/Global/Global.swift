@@ -14,6 +14,7 @@ let Log = Logger()
 struct G {
     static func setup() {
         UIApplication.shared.statusBarStyle = .lightContent
+        UIBarButtonItem.appearance().setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 16)], for: .normal)
         
         #if DEBUG
             Log.enabled = true

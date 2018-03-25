@@ -21,7 +21,12 @@ class LoginViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        self.navigationItem.title = "Login"
+        self.title = "HawkEye NEWS"
+        let item = UIBarButtonItem()
+        item.bk_init(withTitle: "Sign up", style: .plain) { _ in
+            self.navigationController?.pushViewController(RegisterViewController(), animated: true)
+        }
+        self.navigationItem.rightBarButtonItem = item
     }
     
     private func setupUI() {
@@ -61,18 +66,40 @@ class LoginViewController: UIViewController {
     
     private let _userNameTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .white
+        textField.backgroundColor = UIColor(hex: "#f2f2f2")
         textField.layer.cornerRadius = 4
         textField.clipsToBounds = true
+        textField.placeholder = "User Name"
+        let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 44.0, height: 44.0))
+        let imageView = UIImageView(image: UIImage(named: "icon_username")!)
+        imageView.contentMode = .scaleAspectFit
+        leftView.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(12.0)
+        }
+        textField.leftView = leftView
+        textField.leftViewMode = .always
+        textField.clearButtonMode = .whileEditing
         return textField
     }()
     
     private let _passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .white
+        textField.backgroundColor = UIColor(hex: "#f2f2f2")
         textField.layer.cornerRadius = 4
         textField.clipsToBounds = true
         textField.isSecureTextEntry = true
+        textField.placeholder = "Password"
+        let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 44.0, height: 44.0))
+        let imageView = UIImageView(image: UIImage(named: "icon_password")!)
+        imageView.contentMode = .scaleAspectFit
+        leftView.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(12.0)
+        }
+        textField.leftView = leftView
+        textField.leftViewMode = .always
+        textField.clearButtonMode = .whileEditing
         return textField
     }()
     
@@ -81,6 +108,9 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 4
         button.clipsToBounds = true
         button.backgroundColor = G.UI.kThemeColor
+        button.setTitle("Sign in", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setBackgroundImage(UIImage.size(width: 1.0, height: 1.0).color(G.UI.kThemeColor).image, for: .normal)
         return button
     }()
 }

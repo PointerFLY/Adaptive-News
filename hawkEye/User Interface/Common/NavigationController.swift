@@ -15,7 +15,8 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         
         self.navigationBar.setBackgroundImage(UIImage.size(width: 1.0, height: 1.0).color(G.UI.kThemeColor).image, for: .default)
-        self.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)]
+        self.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 18)]
+        self.navigationBar.tintColor = UIColor.white
     }
 
 }
