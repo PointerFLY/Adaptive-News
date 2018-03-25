@@ -19,7 +19,9 @@ class AccountManager {
     }
     
     func login() {
-        KeyValueStore.token = "Fake Token";
+        KeyValueStore.token = "Fake Token"
+        KeyValueStore.userName = "Linghao Ma"
+        KeyValueStore.gender = .male
         NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
     }
     

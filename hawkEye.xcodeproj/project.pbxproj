@@ -20,6 +20,7 @@
 		3553381920654E91002DC6C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381820654E91002DC6C2 /* ProfileViewController.swift */; };
 		3553381B206552DF002DC6C2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381A206552DF002DC6C2 /* Global.swift */; };
 		3553381E2066757A002DC6C2 /* NewsRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsRetriever.swift */; };
+		3553382E2066932C002DC6C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553382D2066932C002DC6C2 /* Gender.swift */; };
 		C5C15C6B0840D2C07720BA0B /* Pods_hawkEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		3553381820654E91002DC6C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3553381A206552DF002DC6C2 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		3553381C2065571C002DC6C2 /* NewsRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRetriever.swift; sourceTree = "<group>"; };
+		3553382D2066932C002DC6C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hawkEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2EEDB5CA8E2D3FCE08BF81 /* Pods-hawkEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hawkEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 			children = (
 				3553381A206552DF002DC6C2 /* Global.swift */,
 				35533816206547F9002DC6C2 /* NotificationNames.swift */,
+				3553382D2066932C002DC6C2 /* Gender.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3553381E2066757A002DC6C2 /* NewsRetriever.swift in Sources */,
+				3553382E2066932C002DC6C2 /* Gender.swift in Sources */,
 				35533813206542CE002DC6C2 /* AccountManager.swift in Sources */,
 				35533817206547F9002DC6C2 /* NotificationNames.swift in Sources */,
 				3553381520654467002DC6C2 /* KeyValueStore.swift in Sources */,
