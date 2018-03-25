@@ -21,7 +21,12 @@ class ProfileViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+    }
+    
+    private func setupUI() {
         self.title = "ME"
+        self.tableView.backgroundColor = G.UI.kViewColorDefault
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
