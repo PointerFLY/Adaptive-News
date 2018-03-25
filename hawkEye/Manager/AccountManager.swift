@@ -25,6 +25,10 @@ class AccountManager {
         NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
     }
     
+    func register() {
+        login()
+    }
+    
     func logout() {
         KeyValueStore.token = nil
         NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self);

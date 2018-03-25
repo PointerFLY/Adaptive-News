@@ -20,6 +20,11 @@ class LoginViewController: UIViewController {
         setupEvents();
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        _userNameTextField.becomeFirstResponder()
+    }
+    
     private func setupNavigation() {
         self.title = "HawkEye NEWS"
         let item = UIBarButtonItem()
@@ -27,6 +32,7 @@ class LoginViewController: UIViewController {
             self.navigationController?.pushViewController(RegisterViewController(), animated: true)
         }
         self.navigationItem.rightBarButtonItem = item
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Sign in", style: .plain, target: nil, action: nil)
     }
     
     private func setupUI() {
@@ -55,7 +61,7 @@ class LoginViewController: UIViewController {
             make.height.equalTo(_passwordTextField)
         }
         
-        _userNameTextField.becomeFirstResponder()
+        _userNameTextField.text = KeyValueStore.userName
     }
     
     private func setupEvents() {
