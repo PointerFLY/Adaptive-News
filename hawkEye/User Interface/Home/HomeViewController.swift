@@ -8,14 +8,11 @@
 
 import UIKit
 import Koloda
+import SafariServices
 
 class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
     
     private let _kolodaView = KolodaView()
-    
-    override func loadView() {
-        self.view = _kolodaView
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +22,7 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     }
     
     private func setupNavigation() {
-        self.navigationItem.title = "HawkEye NEWS"
+        self.title = "HawkEye NEWS"
         let item = UIBarButtonItem()
         item.bk_init(with: UIImage(named: "btn_me")!, style: .plain) { _ in
             self.navigationController?.pushViewController(ProfileViewController(), animated: true);
@@ -36,30 +33,62 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     private func setupUI() {
         self.view.backgroundColor = G.UI.kViewColorDefault
         
+        self.view.addSubview(_kolodaView)
+        self.view.addSubview(_dislikeButton)
+        self.view.addSubview(_likeButton)
+        
+        _kolodaView.snp.makeConstraints { make in
+            make.top.equalTo(self.view).offset(18)
+            make.left.equalTo(self.view).offset(24)
+            make.right.equalTo(self.view).offset(-24)
+            make.bottom.equalTo(self.view).offset(-120)
+        }
+        _dislikeButton.snp.makeConstraints { make in
+            make.bottom.equalTo(self.view.snp.bottom).offset(-20)
+            make.width.equalTo(80)
+            make.height.equalTo(80)
+            make.left.equalTo(self.view).offset(80)
+        }
+        _likeButton.snp.makeConstraints { make in
+            make.bottom.equalTo(self.view.snp.bottom).offset(-20)
+            make.width.equalTo(80)
+            make.height.equalTo(80)
+            make.right.equalTo(self.view).offset(-80)
+        }
+        
         _kolodaView.dataSource = self
         _kolodaView.delegate = self
     }
+    
+    private let _dislikeButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "btn_dislike"), for: .normal)
+        return button
+    }()
+    
+    private let _likeButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "btn_like"), for: .normal)
+        return button
+    }()
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         koloda.reloadData()
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
+        let viewController = SFSafariViewController(url: URL(string: "https://www.theguardian.com/uk-news/2018/mar/26/four-eu-states-set-to-expel-russian-diplomats-over-skripal-attack")!)
+        self.present(viewController, animated: true, completion: nil)
     }
     
-    let images = [
-        UIImage.size(width: 1.0, height: 1.0).color(.red).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.green).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.blue).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.cyan).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.yellow).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.purple).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.orange).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.brown).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.gray).image,
-        UIImage.size(width: 1.0, height: 1.0).color(.magenta).image
-    ]
+    let images: [UIImage] = {
+        var images = [UIImage]()
+        for _ in 1...1000 {
+            let image = UIImage(named: "fiona")!
+            images.append(image)
+        }
+        return images
+    }()
     
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
         return images.count
@@ -70,12 +99,15 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UIImageView(image: images[index])
+        let imageView = UIImageView(image: images[index])
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
+        return imageView
     }
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         let view = OverlayView()
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.cyan.alpha(0.5)
         return view
     }
 }
