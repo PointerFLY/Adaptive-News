@@ -1,0 +1,54 @@
+sport:
+    $(self): section=sport
+    football: section=football
+    rugby union: q=rugby-union&section=sport
+    tennis: q=tennis&section=sport
+    cycling: q=cycling&section=sport
+    cricket: q=cricket&section=sport
+    f1: q=f1&section=sport
+    golf: q=golf&section=sport
+    us sports: q=us-sports&section=sport
+science:
+    $(self): section=science
+    energy: q=energy&section=science
+    environment: section=environment
+    space: q=space&section=science
+    psychology: q=psychology
+    natural science: q=natural-science&section=science
+    humanities: q=humanities
+    earth: q=earth&section=science
+technology:
+    $(self): section=technology
+    IT: q=it&section=technology
+    phone: q=phone&section=technology
+    robots: q=robot&section=technology
+    ai: q=ai&section=technology
+    car: q=car&section=technology
+    digital: q=digital&section=technology
+entertainment:
+    $(self): section=books|music|tv-and-radio|artanddesign|film|games|stage
+    books: section=books
+    music: section=music
+    tv & radio: section=tv-and-radio
+    art & design: section=artanddesign
+    film: section=film
+    games: section=games
+    stage: section=stage
+life style:
+    $(self): section=lifeandstyle
+    fashion: section=fashion
+    recipe: q=recipe&section=lifeandstyle
+    food: q=food&section=lifeandstyle
+    health & fitness: q=health|fitness&section=lifeandstyle
+    home & garden: q=home|garden&section=lifeandstyle
+    love & sex: q=love|sex&section=lifeandstyle
+    family: q=family&section=lifeandstyle
+    money: q=money&section=lifeandstyle
+business:
+    $(self): section=business
+    trade: q=trade&section=business
+    market: q=market&section=business
+    company: q=company&section=business
+    economy: q=economy&section=business
+    stock: q=stock&section=business
+    bank: q=bank&section=business

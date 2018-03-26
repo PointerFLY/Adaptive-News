@@ -30,6 +30,7 @@ PODS:
   - SVProgressHUD (2.2.5)
   - SwiftyImage (1.2.0)
   - SwiftyUserDefaults (3.0.1)
+  - Yaml (3.4.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.2.5)
   - SwiftyImage (~> 1.2)
   - SwiftyUserDefaults (~> 3.0.1)
+  - Yaml (~> 3.4.2)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -58,7 +60,8 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyImage: ebaa7c7b6163cd4ad102f3bb05a8fb276d35b4f3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+  Yaml: 608d95686ff5b814eabc9faa7d3d1ac8d874c5e0
 
-PODFILE CHECKSUM: 985a70333f5c03fae7dc693661c602e6f1b0949f
+PODFILE CHECKSUM: afd626061d08814d5df04c8e5d58dae59d473544
 
 COCOAPODS: 1.4.0
