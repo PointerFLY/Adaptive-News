@@ -18,15 +18,13 @@ class AccountManager {
         return KeyValueStore.token != nil
     }
     
-    func login() {
-        KeyValueStore.token = "Fake Token"
-        KeyValueStore.userName = "Linghao Ma"
-        KeyValueStore.gender = .male
+    func login(userName: String, password: String) {
+        KeyValueStore.token = userName + password
         NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
     }
     
-    func register() {
-        login()
+    func register(user: RegisteringUser) {
+        
     }
     
     func logout() {

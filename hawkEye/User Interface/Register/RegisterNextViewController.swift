@@ -28,7 +28,7 @@ class RegisterNextViewController: UITableViewController {
         self.tableView.backgroundColor = G.UI.kViewColorDefault
         
         _registerButton.bk_addEventHandler({ _ in
-            AccountManager.shared.register()
+            AccountManager.shared.register(user: self._registeringUser)
         }, for: .touchUpInside)
     }
     

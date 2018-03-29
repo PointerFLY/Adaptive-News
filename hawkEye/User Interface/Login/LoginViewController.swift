@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
         _loginButton.bk_addEventHandler({ [weak self] _ in
             guard let `self` = self else { return }
             guard self.checkInput() else { return }
-            AccountManager.shared.login()
+            AccountManager.shared.login(userName: self._userNameTextField.text!, password: self._passwordTextField.text!)
         }, for: .touchUpInside)
     }
     
