@@ -30,6 +30,7 @@ struct G {
     struct UI {
         static let kViewColorDefault = UIColor(hex: "e5e5e5")
         static let kThemeColor = UIColor(hex: "cd2829")
+        static let kTextFieldColor = UIColor(hex: "fefefe")
     }
 }
 

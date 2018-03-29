@@ -66,11 +66,11 @@ class LoginViewController: UIViewController {
     }
     
     private func setupEvents() {
-        _loginButton.bk_(whenTapped: { [weak self] in
+        _loginButton.bk_addEventHandler({ [weak self] _ in
             guard let `self` = self else { return }
             guard self.checkInput() else { return }
             AccountManager.shared.login()
-        })
+        }, for: .touchUpInside)
     }
     
     private func checkInput() -> Bool {
@@ -87,7 +87,7 @@ class LoginViewController: UIViewController {
     
     private let _userNameTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = UIColor(hex: "#f2f2f2")
+        textField.backgroundColor = G.UI.kTextFieldColor
         textField.layer.cornerRadius = 4
         textField.clipsToBounds = true
         textField.placeholder = "User Name"
@@ -106,7 +106,7 @@ class LoginViewController: UIViewController {
     
     private let _passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = UIColor(hex: "#f2f2f2")
+        textField.backgroundColor = G.UI.kTextFieldColor
         textField.layer.cornerRadius = 4
         textField.clipsToBounds = true
         textField.isSecureTextEntry = true

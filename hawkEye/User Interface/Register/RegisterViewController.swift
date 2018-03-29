@@ -10,6 +10,8 @@ import UIKit
 import SVProgressHUD
 
 class RegisterViewController: UIViewController {
+    
+    private var _registeringUser = RegisteringUser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +60,16 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupEvents() {
-        _nextButton.bk_(whenTapped: { [weak self] in
+        _nextButton.bk_addEventHandler({ [weak self] _ in
             guard let `self` = self else { return }
             guard self.checkInput() else { return }
-            let nextViewController = RegisterNextViewController()
+            
+            self._registeringUser.userName = self._userNameTextField.text
+            self._registeringUser.password = self._userNameTextField.text
+            
+            let nextViewController = RegisterNextViewController(registeringUser: self._registeringUser)
             self.navigationController?.pushViewController(nextViewController, animated: true)
-        })
+        }, for: .touchUpInside)
     }
     
     private func checkInput() -> Bool {
@@ -80,7 +86,7 @@ class RegisterViewController: UIViewController {
     
     private let _userNameTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = UIColor(hex: "#f2f2f2")
+        textField.backgroundColor = G.UI.kTextFieldColor
         textField.layer.cornerRadius = 4
         textField.clipsToBounds = true
         textField.placeholder = "User Name"
@@ -99,7 +105,7 @@ class RegisterViewController: UIViewController {
     
     private let _passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = UIColor(hex: "#f2f2f2")
+        textField.backgroundColor = G.UI.kTextFieldColor
         textField.layer.cornerRadius = 4
         textField.clipsToBounds = true
         textField.placeholder = "Password"

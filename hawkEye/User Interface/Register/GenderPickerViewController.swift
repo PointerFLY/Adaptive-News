@@ -10,7 +10,9 @@ import UIKit
 
 class GenderPickerViewController: UITableViewController {
     
-    private var _genders = [Gender.male, Gender.female, Gender.other]
+    var didPickGenderHandler: ((Gender) -> Void)?
+    
+    private var _genders: [Gender] = [.male, .female, .other]
     private var _selectedIndex: Int? = nil
     
     init() {
@@ -48,6 +50,14 @@ class GenderPickerViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard _selectedIndex != indexPath.row else { return }
+
+        if let selectedIndex = _selectedIndex {
+            tableView.cellForRow(at: IndexPath(row: selectedIndex, section: 0))?.accessoryType = .none
+        }
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         
+        _selectedIndex = indexPath.row
+        didPickGenderHandler?(_genders[_selectedIndex!]);
     }
 }

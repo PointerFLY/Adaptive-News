@@ -1,5 +1,5 @@
 //
-//  AgePickerViewController.swift
+//  AgeGroupPickerViewController.swift
 //  hawkEye
 //
 //  Created by PointerFLY on 29/03/2018.
@@ -8,8 +8,11 @@
 
 import UIKit
 
-class AgePickerViewController: UITableViewController {
+class AgeGroupPickerViewController: UITableViewController {
     
+    var didPickAgeGroupHandler: ((AgeGroup) -> Void)?
+    
+    private var _ageGroups: [AgeGroup] = [.kid, .teenager, .youngAdult, .middleAge, .elder]
     private var _selectedIndex: Int? = nil
     
     init() {
@@ -32,12 +35,12 @@ class AgePickerViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return _ageGroups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-        cell.textLabel?.text = "10 - 19"
+        cell.textLabel?.text = _ageGroups[indexPath.row].description
         if indexPath.row == _selectedIndex {
             cell.accessoryType = .checkmark
         }
@@ -47,7 +50,16 @@ class AgePickerViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    
+        guard _selectedIndex != indexPath.row else { return }
         
+        if let selectedIndex = _selectedIndex {
+            tableView.cellForRow(at: IndexPath(row: selectedIndex, section: 0))?.accessoryType = .none
+        }
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        
+        _selectedIndex = indexPath.row
+        didPickAgeGroupHandler?(_ageGroups[_selectedIndex!]);
     }
 
 }
