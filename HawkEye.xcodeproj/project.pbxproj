@@ -27,6 +27,7 @@
 		35C11153206D4DFD00CEE45C /* AgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C11152206D4DFD00CEE45C /* AgeGroup.swift */; };
 		35C11155206D509700CEE45C /* RegisteringUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C11154206D509700CEE45C /* RegisteringUser.swift */; };
 		35C11157206D612000CEE45C /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C11156206D612000CEE45C /* DBUser.swift */; };
+		35C1115D206D775A00CEE45C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C1115C206D775A00CEE45C /* User.swift */; };
 		35EEEAED2067CAE00037B975 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAEC2067CAE00037B975 /* NavigationController.swift */; };
 		35EEEAF32067D4F40037B975 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAF22067D4F40037B975 /* RegisterViewController.swift */; };
 		35F2245020690B79002B2EFB /* tags.yml in Resources */ = {isa = PBXBuildFile; fileRef = 35F2244F20690B79002B2EFB /* tags.yml */; };
@@ -72,6 +73,7 @@
 		35C11152206D4DFD00CEE45C /* AgeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeGroup.swift; sourceTree = "<group>"; };
 		35C11154206D509700CEE45C /* RegisteringUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteringUser.swift; sourceTree = "<group>"; };
 		35C11156206D612000CEE45C /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
+		35C1115C206D775A00CEE45C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		35EEEAEC2067CAE00037B975 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		35EEEAF22067D4F40037B975 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		35F2244F20690B79002B2EFB /* tags.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tags.yml; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				35F2245220693D01002B2EFB /* UserModel.swift */,
 				35C11152206D4DFD00CEE45C /* AgeGroup.swift */,
 				35C11154206D509700CEE45C /* RegisteringUser.swift */,
+				35C1115C206D775A00CEE45C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				35C1114F206D3DEA00CEE45C /* AgeGroupPickerViewController.swift in Sources */,
 				3553381120653D17002DC6C2 /* HomeViewController.swift in Sources */,
 				35C11153206D4DFD00CEE45C /* AgeGroup.swift in Sources */,
+				35C1115D206D775A00CEE45C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,8 @@ class AccountManager {
     
     private init() {}
     
+    var currentUser: User?
+    
     var isLogin: Bool {
         return KeyValueStore.token != nil
     }
@@ -24,10 +26,13 @@ class AccountManager {
             do {
                 let realm = try Realm()
                 let dbUser = realm.object(ofType: DBUser.self, forPrimaryKey: userName)
-                if let user = dbUser {
-                    if user.password.md5() == password {
+                if let dbUser = dbUser {
+                    if dbUser.password.md5() == password {
                         KeyValueStore.token = (userName + password).md5()
+                        KeyValueStore.lastPassword = password
+                        KeyValueStore.lastUserName = userName
                         DispatchQueue.main.async {
+                            self.currentUser = User(dbUser: dbUser)
                             NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
                             success()
                         }

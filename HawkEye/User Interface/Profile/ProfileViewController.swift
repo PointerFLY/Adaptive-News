@@ -44,12 +44,12 @@ class ProfileViewController: UITableViewController {
         case (0, 0):
             cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
             cell.textLabel?.text = "User Name"
-            cell.detailTextLabel?.text = KeyValueStore.userName
+            cell.detailTextLabel?.text = AccountManager.shared.currentUser?.userName
             return cell
         case (0, 1):
             cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
             cell.textLabel?.text = "Gender"
-            cell.detailTextLabel?.text = KeyValueStore.gender?.description
+            cell.detailTextLabel?.text = AccountManager.shared.currentUser?.gender.description
         case (0, 2):
             cell = UITableViewCell()
             cell.textLabel?.text = "Age"

@@ -62,7 +62,10 @@ class LoginViewController: UIViewController {
             make.height.equalTo(_passwordTextField)
         }
         
-        _userNameTextField.text = KeyValueStore.userName
+        if let userName = KeyValueStore.lastUserName {
+            _userNameTextField.text = userName
+            _passwordTextField.text = KeyValueStore.lastPassword
+        }
     }
     
     private func setupEvents() {

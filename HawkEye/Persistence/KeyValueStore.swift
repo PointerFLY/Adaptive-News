@@ -22,34 +22,7 @@ class KeyValueStore {
     private static let keychain = Keychain(service: Bundle.main.bundleIdentifier!)
     
     private struct KeychainKeys {
-        
-    }
-    
-    static var userName: String? {
-        get {
-            return Defaults[.userName]
-        }
-        set {
-            Defaults[.userName] = newValue
-            Defaults.synchronize();
-        }
-    }
-    
-    static var gender: Gender? {
-        get {
-            if let intValue = Defaults[.gender] {
-                return Gender(rawValue: intValue)!
-            }
-            return nil
-        }
-        set {
-            if let value = newValue {
-                Defaults[.gender] = Int(value.rawValue)
-            } else {
-                Defaults[.gender] = nil
-            }
-            Defaults.synchronize()
-        }
+        static let kPassword = "kPassword"
     }
     
     static var token: String? {
@@ -59,6 +32,33 @@ class KeyValueStore {
         set {
             Defaults[.token] = newValue
             Defaults.synchronize()
+        }
+    }
+    
+    static var lastUserName: String? {
+        get {
+            return Defaults[.userName]
+        }
+        set {
+            Defaults[.userName] = newValue
+            Defaults.synchronize();
+        }
+    }
+    
+    static var lastPassword: String? {
+        get {
+            do {
+                return try keychain.get(KeychainKeys.kPassword)
+            } catch {
+                return nil
+            }
+        }
+        set {
+            if let password = lastPassword {
+                try? keychain.set(password, key: KeychainKeys.kPassword)
+            } else {
+                try? keychain.remove(KeychainKeys.kPassword)
+            }
         }
     }
 }
