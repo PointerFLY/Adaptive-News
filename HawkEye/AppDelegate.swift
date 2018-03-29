@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         G.setup()
+        Log.debug(NSHomeDirectory())
     
         return true
     }

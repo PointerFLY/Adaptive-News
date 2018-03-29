@@ -27,12 +27,13 @@ class AccountManager {
                 let realm = try Realm()
                 let dbUser = realm.object(ofType: DBUser.self, forPrimaryKey: userName)
                 if let dbUser = dbUser {
-                    if dbUser.password.md5() == password {
+                    if dbUser.password == (userName + password).md5() {
                         KeyValueStore.token = (userName + password).md5()
                         KeyValueStore.lastPassword = password
                         KeyValueStore.lastUserName = userName
+                        let user = User(dbUser: dbUser)
                         DispatchQueue.main.async {
-                            self.currentUser = User(dbUser: dbUser)
+                            self.currentUser = user
                             NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
                             success()
                         }
@@ -77,6 +78,7 @@ class AccountManager {
     
     func logout() {
         KeyValueStore.token = nil
+        currentUser = nil
         NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self);
     }
 }

@@ -49,15 +49,20 @@ class KeyValueStore {
         get {
             do {
                 return try keychain.get(KeychainKeys.kPassword)
-            } catch {
+            } catch let error  {
+                Log.error(error)
                 return nil
             }
         }
         set {
-            if let password = lastPassword {
-                try? keychain.set(password, key: KeychainKeys.kPassword)
-            } else {
-                try? keychain.remove(KeychainKeys.kPassword)
+            do {
+                if let password = lastPassword {
+                    try keychain.set(password, key: KeychainKeys.kPassword)
+                } else {
+                    try keychain.remove(KeychainKeys.kPassword)
+                }
+            } catch let error {
+                Log.error(error)
             }
         }
     }
