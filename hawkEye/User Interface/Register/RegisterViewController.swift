@@ -25,7 +25,7 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        self.title = "HawkEye NEWS"
+        self.title = "Sign up"
     }
     
     private func setupUI() {
@@ -33,7 +33,7 @@ class RegisterViewController: UIViewController {
         
         self.view.addSubview(_userNameTextField)
         self.view.addSubview(_passwordTextField)
-        self.view.addSubview(_registerButton)
+        self.view.addSubview(_nextButton)
         
         _userNameTextField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(32)
@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController {
             make.right.equalTo(_userNameTextField)
             make.height.equalTo(_userNameTextField)
         }
-        _registerButton.snp.makeConstraints { make in
+        _nextButton.snp.makeConstraints { make in
             make.top.equalTo(_passwordTextField.snp.bottom).offset(44)
             make.left.equalTo(_passwordTextField)
             make.right.equalTo(_passwordTextField)
@@ -58,10 +58,11 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupEvents() {
-        _registerButton.bk_(whenTapped: { [weak self] in
-            guard let strongSelf = self else { return }
-            guard strongSelf.checkInput() else { return }
-            AccountManager.shared.register()
+        _nextButton.bk_(whenTapped: { [weak self] in
+            guard let `self` = self else { return }
+            guard self.checkInput() else { return }
+            let nextViewController = RegisterNextViewController()
+            self.navigationController?.pushViewController(nextViewController, animated: true)
         })
     }
     
@@ -115,12 +116,12 @@ class RegisterViewController: UIViewController {
         return textField
     }()
     
-    private let _registerButton: UIButton = {
+    private let _nextButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 4
         button.clipsToBounds = true
         button.backgroundColor = G.UI.kThemeColor
-        button.setTitle("Sign up", for: .normal)
+        button.setTitle("Next", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.setBackgroundImage(UIImage.size(width: 1.0, height: 1.0).color(G.UI.kThemeColor).image, for: .normal)
         return button

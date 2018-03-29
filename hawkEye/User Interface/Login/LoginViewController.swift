@@ -67,8 +67,8 @@ class LoginViewController: UIViewController {
     
     private func setupEvents() {
         _loginButton.bk_(whenTapped: { [weak self] in
-            guard let strongSelf = self else { return }
-            guard strongSelf.checkInput() else { return }
+            guard let `self` = self else { return }
+            guard self.checkInput() else { return }
             AccountManager.shared.login()
         })
     }

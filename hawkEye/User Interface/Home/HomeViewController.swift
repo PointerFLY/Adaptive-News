@@ -84,7 +84,7 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     let images: [UIImage] = {
         var images = [UIImage]()
         for _ in 1...1000 {
-            let image = UIImage(named: "fiona")!
+            let image = UIImage.size(CGSize(width: 1.0, height: 1.0)).color(.red).image
             images.append(image)
         }
         return images

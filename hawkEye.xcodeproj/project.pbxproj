@@ -21,10 +21,14 @@
 		3553381B206552DF002DC6C2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381A206552DF002DC6C2 /* Global.swift */; };
 		3553381E2066757A002DC6C2 /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsFetcher.swift */; };
 		3553382E2066932C002DC6C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553382D2066932C002DC6C2 /* Gender.swift */; };
+		35C11149206D390B00CEE45C /* RegisterNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C11148206D390B00CEE45C /* RegisterNextViewController.swift */; };
+		35C1114D206D3DB400CEE45C /* GenderPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C1114C206D3DB400CEE45C /* GenderPickerViewController.swift */; };
+		35C1114F206D3DEA00CEE45C /* AgePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C1114E206D3DEA00CEE45C /* AgePickerViewController.swift */; };
 		35EEEAED2067CAE00037B975 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAEC2067CAE00037B975 /* NavigationController.swift */; };
 		35EEEAF32067D4F40037B975 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAF22067D4F40037B975 /* RegisterViewController.swift */; };
 		35F2245020690B79002B2EFB /* tags.yml in Resources */ = {isa = PBXBuildFile; fileRef = 35F2244F20690B79002B2EFB /* tags.yml */; };
 		35F2245320693D01002B2EFB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F2245220693D01002B2EFB /* UserModel.swift */; };
+		35F22455206D184E002B2EFB /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F22454206D184E002B2EFB /* FileUtils.swift */; };
 		C5C15C6B0840D2C07720BA0B /* Pods_hawkEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +62,14 @@
 		3553381A206552DF002DC6C2 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		3553381C2065571C002DC6C2 /* NewsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFetcher.swift; sourceTree = "<group>"; };
 		3553382D2066932C002DC6C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		35C11148206D390B00CEE45C /* RegisterNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNextViewController.swift; sourceTree = "<group>"; };
+		35C1114C206D3DB400CEE45C /* GenderPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerViewController.swift; sourceTree = "<group>"; };
+		35C1114E206D3DEA00CEE45C /* AgePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgePickerViewController.swift; sourceTree = "<group>"; };
 		35EEEAEC2067CAE00037B975 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		35EEEAF22067D4F40037B975 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		35F2244F20690B79002B2EFB /* tags.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tags.yml; sourceTree = "<group>"; };
 		35F2245220693D01002B2EFB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		35F22454206D184E002B2EFB /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hawkEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2EEDB5CA8E2D3FCE08BF81 /* Pods-hawkEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hawkEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3553381420654467002DC6C2 /* KeyValueStore.swift */,
+				35F22454206D184E002B2EFB /* FileUtils.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -231,6 +240,9 @@
 			isa = PBXGroup;
 			children = (
 				35EEEAF22067D4F40037B975 /* RegisterViewController.swift */,
+				35C11148206D390B00CEE45C /* RegisterNextViewController.swift */,
+				35C1114C206D3DB400CEE45C /* GenderPickerViewController.swift */,
+				35C1114E206D3DEA00CEE45C /* AgePickerViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -455,10 +467,14 @@
 				3553380F20653D05002DC6C2 /* LoginViewController.swift in Sources */,
 				3553381B206552DF002DC6C2 /* Global.swift in Sources */,
 				35F2245320693D01002B2EFB /* UserModel.swift in Sources */,
+				35F22455206D184E002B2EFB /* FileUtils.swift in Sources */,
+				35C1114D206D3DB400CEE45C /* GenderPickerViewController.swift in Sources */,
 				355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */,
 				355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */,
+				35C11149206D390B00CEE45C /* RegisterNextViewController.swift in Sources */,
 				35EEEAF32067D4F40037B975 /* RegisterViewController.swift in Sources */,
 				3553381920654E91002DC6C2 /* ProfileViewController.swift in Sources */,
+				35C1114F206D3DEA00CEE45C /* AgePickerViewController.swift in Sources */,
 				3553381120653D17002DC6C2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
