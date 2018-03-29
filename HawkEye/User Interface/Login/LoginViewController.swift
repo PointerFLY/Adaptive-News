@@ -69,7 +69,12 @@ class LoginViewController: UIViewController {
         _loginButton.bk_addEventHandler({ [weak self] _ in
             guard let `self` = self else { return }
             guard self.checkInput() else { return }
-            AccountManager.shared.login(userName: self._userNameTextField.text!, password: self._passwordTextField.text!)
+            SVProgressHUD.show()
+            AccountManager.shared.login(userName: self._userNameTextField.text!, password: self._passwordTextField.text!, success: {
+                SVProgressHUD.showSuccess(withStatus: "Login Success")
+            }, failure: { message in
+                SVProgressHUD.showError(withStatus: message)
+            })
         }, for: .touchUpInside)
     }
     
