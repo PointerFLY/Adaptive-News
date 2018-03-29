@@ -8,12 +8,12 @@
 
 import UIKit
 
-enum AgeGroup: CustomStringConvertible {
-    case kid
-    case teenager
-    case youngAdult
-    case middleAge
-    case elder
+enum AgeGroup: Int, CustomStringConvertible {
+    case kid = 0
+    case teenager = 1
+    case youngAdult = 2
+    case middleAge = 3
+    case elder = 4
     
     var description: String {
         switch self {

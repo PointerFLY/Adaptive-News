@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:hawkEye.xcodeproj">
+      location = "group:/Users/pointerfly/Code/hawkEye-iOS/HawkEye.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HawkEye.xcodeproj">
    </FileRef>
 </Workspace>

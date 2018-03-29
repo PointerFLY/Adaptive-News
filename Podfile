@@ -2,7 +2,7 @@ platform :ios, '9.0'
 use_frameworks!
 # inhibit_all_warnings!
 
-target 'hawkEye' do
+target 'HawkEye' do
     pod 'Alamofire', '~> 4.7'
     pod 'RealmSwift', '~> 3.1'
     pod 'SwiftyUserDefaults', '~> 3.0.1'
@@ -15,4 +15,5 @@ target 'hawkEye' do
     pod 'SwiftyImage', '~> 1.2'
     pod 'Koloda', '~> 4.3.1'
     pod 'Yaml', '~> 3.4.2'
+    pod 'CryptoSwift', '~> 0.8.3'
 end

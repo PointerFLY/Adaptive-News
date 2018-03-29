@@ -12,7 +12,7 @@ class AccountManager {
     
     static let shared = AccountManager()
     
-    private init() { }
+    private init() {}
     
     var isLogin: Bool {
         return KeyValueStore.token != nil

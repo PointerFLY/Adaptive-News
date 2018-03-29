@@ -36,7 +36,7 @@ class RootViewController: UIViewController {
             self.addChildViewController(_homeNavigationController)
             self.view.addSubview(_homeNavigationController.view)
         } else {
-            _loginNavigationController = NavigationController(rootViewController: RegisterNextViewController(registeringUser: RegisteringUser()))
+            _loginNavigationController = NavigationController(rootViewController: LoginViewController())
             self.addChildViewController(_loginNavigationController)
             self.view.addSubview(_loginNavigationController.view)
         }

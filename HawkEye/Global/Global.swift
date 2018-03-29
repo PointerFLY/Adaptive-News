@@ -9,6 +9,7 @@
 import UIKit
 import Log
 import SVProgressHUD
+import RealmSwift
 
 let Log = Logger()
 
@@ -25,6 +26,7 @@ struct G {
             Log.enabled = false
         #endif
         
+        _ = try! Realm()
     }
     
     struct UI {
