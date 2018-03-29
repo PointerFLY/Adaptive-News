@@ -13,10 +13,13 @@ class AgeGroupPickerViewController: UITableViewController {
     var didPickAgeGroupHandler: ((AgeGroup) -> Void)?
     
     private var _ageGroups: [AgeGroup] = [.kid, .teenager, .youngAdult, .middleAge, .elder]
-    private var _selectedIndex: Int? = nil
+    private var _selectedIndex: Int?
     
-    init() {
+    init(ageGroup: AgeGroup?) {
         super.init(style: .grouped)
+        if let ageGroup = ageGroup {
+            _selectedIndex = _ageGroups.index(of: ageGroup)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

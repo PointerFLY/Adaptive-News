@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AccountManager {
     
@@ -23,8 +24,25 @@ class AccountManager {
         NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
     }
     
-    func register(user: RegisteringUser) {
+    func register(user: RegisteringUser, success: @escaping () -> Void, failure: @escaping (NSError) -> Void) {
+        let dbUser = user.toDB()
         
+        DispatchQueue.global().async {
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(dbUser)
+                }
+            } catch let error as NSError {
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                success()
+            }
+        }
     }
     
     func logout() {

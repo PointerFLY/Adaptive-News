@@ -13,10 +13,13 @@ class GenderPickerViewController: UITableViewController {
     var didPickGenderHandler: ((Gender) -> Void)?
     
     private var _genders: [Gender] = [.male, .female, .other]
-    private var _selectedIndex: Int? = nil
+    private var _selectedIndex: Int?
     
-    init() {
+    init(gender: Gender?) {
         super.init(style: .grouped)
+        if let gender = gender {
+            _selectedIndex = _genders.index(of: gender)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

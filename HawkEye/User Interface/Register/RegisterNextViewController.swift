@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RegisterNextViewController: UITableViewController {
     
@@ -27,9 +28,31 @@ class RegisterNextViewController: UITableViewController {
         self.title = "Info"
         self.tableView.backgroundColor = G.UI.kViewColorDefault
         
-        _registerButton.bk_addEventHandler({ _ in
-            AccountManager.shared.register(user: self._registeringUser)
+        _registerButton.bk_addEventHandler({ [weak self] _ in
+            guard let `self` = self else { return }
+            guard self.checkInput() else { return }
+            SVProgressHUD.show()
+            AccountManager.shared.register(user: self._registeringUser, success:{
+                SVProgressHUD.showSuccess(withStatus: "Success")
+            }, failure: { error in
+                SVProgressHUD.showSuccess(withStatus: error.localizedDescription)
+            })
         }, for: .touchUpInside)
+    }
+    
+    private func checkInput() -> Bool {
+        if _registeringUser.gender == nil {
+            SVProgressHUD.showError(withStatus: "Please choose gender")
+            return false
+        } else if _registeringUser.ageGroup == nil {
+            SVProgressHUD.showError(withStatus: "Please choose age")
+            return false
+        } else if _registeringUser.preferredTopics == nil {
+            SVProgressHUD.showError(withStatus: "Please choose topics")
+            return false
+        }
+        
+        return false
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,14 +112,14 @@ class RegisterNextViewController: UITableViewController {
         
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
-            let viewController = GenderPickerViewController()
+            let viewController = GenderPickerViewController(gender: _registeringUser.gender)
             viewController.didPickGenderHandler = { gender in
                 self._registeringUser.gender = gender
                 self.tableView.reloadRows(at: [indexPath], with: .none)
             }
             self.navigationController?.pushViewController(viewController, animated: true)
         case (0, 1):
-            let viewController = AgeGroupPickerViewController()
+            let viewController = AgeGroupPickerViewController(ageGroup: _registeringUser.ageGroup)
             viewController.didPickAgeGroupHandler = { ageGroup in
                 self._registeringUser.ageGroup = ageGroup
                 self.tableView.reloadRows(at: [indexPath], with: .none)
