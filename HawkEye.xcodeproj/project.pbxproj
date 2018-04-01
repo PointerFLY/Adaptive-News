@@ -21,6 +21,8 @@
 		3553381B206552DF002DC6C2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381A206552DF002DC6C2 /* Global.swift */; };
 		3553381E2066757A002DC6C2 /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsFetcher.swift */; };
 		3553382E2066932C002DC6C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553382D2066932C002DC6C2 /* Gender.swift */; };
+		35BACC9B20700BFF00A86ED2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BACC9A20700BFF00A86ED2 /* UserModel.swift */; };
+		35BACCBA207100B200A86ED2 /* NewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BACCB9207100B200A86ED2 /* NewsCategory.swift */; };
 		35C11149206D390B00CEE45C /* RegisterNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C11148206D390B00CEE45C /* RegisterNextViewController.swift */; };
 		35C1114D206D3DB400CEE45C /* GenderPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C1114C206D3DB400CEE45C /* GenderPickerViewController.swift */; };
 		35C1114F206D3DEA00CEE45C /* AgeGroupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C1114E206D3DEA00CEE45C /* AgeGroupPickerViewController.swift */; };
@@ -31,7 +33,6 @@
 		35EEEAED2067CAE00037B975 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAEC2067CAE00037B975 /* NavigationController.swift */; };
 		35EEEAF32067D4F40037B975 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEEAF22067D4F40037B975 /* RegisterViewController.swift */; };
 		35F2245020690B79002B2EFB /* tags.yml in Resources */ = {isa = PBXBuildFile; fileRef = 35F2244F20690B79002B2EFB /* tags.yml */; };
-		35F2245320693D01002B2EFB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F2245220693D01002B2EFB /* UserModel.swift */; };
 		9F4EEC708D5CD61398C79D57 /* Pods_HawkEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA409F2AB97E248FFF44F66 /* Pods_HawkEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		3553381A206552DF002DC6C2 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		3553381C2065571C002DC6C2 /* NewsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFetcher.swift; sourceTree = "<group>"; };
 		3553382D2066932C002DC6C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		35BACC9A20700BFF00A86ED2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		35BACCB9207100B200A86ED2 /* NewsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategory.swift; sourceTree = "<group>"; };
 		35C11148206D390B00CEE45C /* RegisterNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNextViewController.swift; sourceTree = "<group>"; };
 		35C1114C206D3DB400CEE45C /* GenderPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerViewController.swift; sourceTree = "<group>"; };
 		35C1114E206D3DEA00CEE45C /* AgeGroupPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeGroupPickerViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		35EEEAEC2067CAE00037B975 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		35EEEAF22067D4F40037B975 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		35F2244F20690B79002B2EFB /* tags.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tags.yml; sourceTree = "<group>"; };
-		35F2245220693D01002B2EFB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		39398678FDB808E23BF4BF5A /* Pods-HawkEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HawkEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HawkEye/Pods-HawkEye.debug.xcconfig"; sourceTree = "<group>"; };
 		3D98B07A03CFA450E96045CB /* Pods_hawkEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hawkEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2EEDB5CA8E2D3FCE08BF81 /* Pods-hawkEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hawkEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		3553382920667850002DC6C2 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				35BACCB9207100B200A86ED2 /* NewsCategory.swift */,
 				3553381A206552DF002DC6C2 /* Global.swift */,
 				35533816206547F9002DC6C2 /* NotificationNames.swift */,
 				3553382D2066932C002DC6C2 /* Gender.swift */,
@@ -259,10 +262,10 @@
 		35F22451206929CD002B2EFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				35F2245220693D01002B2EFB /* UserModel.swift */,
 				35C11152206D4DFD00CEE45C /* AgeGroup.swift */,
 				35C11154206D509700CEE45C /* RegisteringUser.swift */,
 				35C1115C206D775A00CEE45C /* User.swift */,
+				35BACC9A20700BFF00A86ED2 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,7 +337,7 @@
 		355337E0206511A8002DC6C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = PointerFLY;
 				TargetAttributes = {
@@ -482,9 +485,10 @@
 				35533817206547F9002DC6C2 /* NotificationNames.swift in Sources */,
 				3553381520654467002DC6C2 /* KeyValueStore.swift in Sources */,
 				3553380F20653D05002DC6C2 /* LoginViewController.swift in Sources */,
+				35BACCBA207100B200A86ED2 /* NewsCategory.swift in Sources */,
+				35BACC9B20700BFF00A86ED2 /* UserModel.swift in Sources */,
 				3553381B206552DF002DC6C2 /* Global.swift in Sources */,
 				35C11157206D612000CEE45C /* DBUser.swift in Sources */,
-				35F2245320693D01002B2EFB /* UserModel.swift in Sources */,
 				35C1114D206D3DB400CEE45C /* GenderPickerViewController.swift in Sources */,
 				355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */,
 				355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */,

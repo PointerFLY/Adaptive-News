@@ -47,12 +47,9 @@ class RegisterNextViewController: UITableViewController {
         } else if _registeringUser.ageGroup == nil {
             SVProgressHUD.showError(withStatus: "Please choose age")
             return false
-        } else if _registeringUser.preferredTopics == nil {
-            SVProgressHUD.showError(withStatus: "Please choose topics")
-            return false
         }
         
-        return false
+        return true
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,7 +57,7 @@ class RegisterNextViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2, 6][section]
+        return [2, G.News.topics.count][section]
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -82,29 +79,21 @@ class RegisterNextViewController: UITableViewController {
             cell.textLabel?.text = "Age"
             cell.detailTextLabel?.text = _registeringUser.ageGroup?.description
             cell.accessoryType = .disclosureIndicator
-        default:
+        case (1, _):
             cell = UITableViewCell()
-            cell.textLabel?.text = "xxx"
-            cell.textLabel?.textColor = UIColor.red
+            cell.textLabel?.text = G.News.topics[indexPath.row]
+        default:
+            cell = nil
         }
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return 44 + 32
-        }
-        
-        return UITableViewAutomaticDimension
+        return [UITableViewAutomaticDimension, CGFloat(44.0 + 32.0)][section]
     }
-    
+
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == 1 {
-            return _registerFooterView
-        }
-        
-        return nil
+        return [nil, _registerFooterView][section]
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -125,6 +114,19 @@ class RegisterNextViewController: UITableViewController {
                 self.tableView.reloadRows(at: [indexPath], with: .none)
             }
             self.navigationController?.pushViewController(viewController, animated: true)
+        case (1, _):
+            let cell = tableView.cellForRow(at: indexPath)!
+            let topic = G.News.topics[indexPath.row]
+            let isChoosed = _registeringUser.preferredTopics.contains(topic)
+            if isChoosed {
+                cell.accessoryType = .none
+                cell.textLabel?.textColor = UIColor.black
+                _registeringUser.preferredTopics.remove(topic)
+            } else {
+                cell.accessoryType = .checkmark
+                cell.textLabel?.textColor = UIColor.red
+                _registeringUser.preferredTopics.insert(topic)
+            }
         default:
             break
         }

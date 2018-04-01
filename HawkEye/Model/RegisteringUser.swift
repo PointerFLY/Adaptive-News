@@ -15,7 +15,7 @@ class RegisteringUser {
     var password: String?
     var gender: Gender?
     var ageGroup: AgeGroup?
-    var preferredTopics: [String]?
+    var preferredTopics = Set<String>()
     
     func toDB() -> DBUser {
         let user = DBUser()
@@ -23,12 +23,7 @@ class RegisteringUser {
         user.password = password!.md5()
         user.gender = gender!.rawValue
         user.ageGroup = ageGroup!.rawValue
-        
-        let topics = List<String>()
-        preferredTopics!.forEach({ item in
-            topics.append(item)
-        })
-        user.preferredTopics = topics
+        // TODO: Write UserModel
         
         return user
     }
