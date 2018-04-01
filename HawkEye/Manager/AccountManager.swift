@@ -13,12 +13,18 @@ class AccountManager {
     
     static let shared = AccountManager()
     
-    private init() {}
+    private init() {
+        if isLogin {
+            let dbUser = try! Realm().object(ofType: DBUser.self, forPrimaryKey: KeyValueStore.lastUserName!)
+            currentUser = User(dbUser: dbUser!)
+        }
+    }
     
     var currentUser: User?
     
     var isLogin: Bool {
         return KeyValueStore.token != nil
+            && KeyValueStore.lastUserName != nil
     }
     
     func login(userName: String, password: String, success: @escaping () -> Void, failure: @escaping (String) -> Void) {
@@ -29,8 +35,8 @@ class AccountManager {
                 if let dbUser = dbUser {
                     if dbUser.password == (userName + password).md5() {
                         KeyValueStore.token = (userName + Date().description + password).md5()
-                        KeyValueStore.lastPassword = password
                         KeyValueStore.lastUserName = userName
+                        KeyValueStore.lastPassword = password
                         let user = User(dbUser: dbUser)
                         DispatchQueue.main.async {
                             self.currentUser = user

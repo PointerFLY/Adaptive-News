@@ -56,7 +56,7 @@ class KeyValueStore {
         }
         set {
             do {
-                if let password = lastPassword {
+                if let password = newValue {
                     try keychain.set(password, key: KeychainKeys.kPassword)
                 } else {
                     try keychain.remove(KeychainKeys.kPassword)
