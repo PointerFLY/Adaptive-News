@@ -44,7 +44,7 @@ class RootViewController: UIViewController {
     
     @objc
     private func flipIfNeeded() {
-        if AccountManager.shared.isLogin && (self.childViewControllers.first! === _loginNavigationController) {
+        if AccountManager.shared.isLogin && (self.childViewControllers.first === _loginNavigationController) {
             _homeNavigationController = NavigationController(rootViewController: HomeViewController())
             self.addChildViewController(_homeNavigationController)
             self.transition(from: _loginNavigationController,

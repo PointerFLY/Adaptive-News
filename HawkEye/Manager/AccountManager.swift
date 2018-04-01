@@ -81,7 +81,6 @@ class AccountManager {
                 
                 self.login(userName: user.userName!, password: user.password!, success: {
                     success()
-                    NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
                 }, failure: { message in
                     failure("Register failed")
                 })
