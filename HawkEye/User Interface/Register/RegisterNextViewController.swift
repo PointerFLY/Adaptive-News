@@ -35,7 +35,7 @@ class RegisterNextViewController: UITableViewController {
             AccountManager.shared.register(user: self._registeringUser, success:{
                 SVProgressHUD.showSuccess(withStatus: "Success")
             }, failure: { message in
-                SVProgressHUD.showSuccess(withStatus: message)
+                SVProgressHUD.showError(withStatus: message)
             })
         }, for: .touchUpInside)
     }

@@ -21,8 +21,8 @@
 		3553381B206552DF002DC6C2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381A206552DF002DC6C2 /* Global.swift */; };
 		3553381E2066757A002DC6C2 /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsFetcher.swift */; };
 		3553382E2066932C002DC6C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553382D2066932C002DC6C2 /* Gender.swift */; };
-		35BACC9B20700BFF00A86ED2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BACC9A20700BFF00A86ED2 /* UserModel.swift */; };
 		35BACCBA207100B200A86ED2 /* NewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BACCB9207100B200A86ED2 /* NewsCategory.swift */; };
+		35BACCBC20710EBA00A86ED2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BACCBB20710EBA00A86ED2 /* UserModel.swift */; };
 		35C11149206D390B00CEE45C /* RegisterNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C11148206D390B00CEE45C /* RegisterNextViewController.swift */; };
 		35C1114D206D3DB400CEE45C /* GenderPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C1114C206D3DB400CEE45C /* GenderPickerViewController.swift */; };
 		35C1114F206D3DEA00CEE45C /* AgeGroupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C1114E206D3DEA00CEE45C /* AgeGroupPickerViewController.swift */; };
@@ -68,8 +68,8 @@
 		3553381A206552DF002DC6C2 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		3553381C2065571C002DC6C2 /* NewsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFetcher.swift; sourceTree = "<group>"; };
 		3553382D2066932C002DC6C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
-		35BACC9A20700BFF00A86ED2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		35BACCB9207100B200A86ED2 /* NewsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategory.swift; sourceTree = "<group>"; };
+		35BACCBB20710EBA00A86ED2 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		35C11148206D390B00CEE45C /* RegisterNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNextViewController.swift; sourceTree = "<group>"; };
 		35C1114C206D3DB400CEE45C /* GenderPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerViewController.swift; sourceTree = "<group>"; };
 		35C1114E206D3DEA00CEE45C /* AgeGroupPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeGroupPickerViewController.swift; sourceTree = "<group>"; };
@@ -262,10 +262,10 @@
 		35F22451206929CD002B2EFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				35BACCBB20710EBA00A86ED2 /* UserModel.swift */,
 				35C11152206D4DFD00CEE45C /* AgeGroup.swift */,
 				35C11154206D509700CEE45C /* RegisteringUser.swift */,
 				35C1115C206D775A00CEE45C /* User.swift */,
-				35BACC9A20700BFF00A86ED2 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -486,9 +486,9 @@
 				3553381520654467002DC6C2 /* KeyValueStore.swift in Sources */,
 				3553380F20653D05002DC6C2 /* LoginViewController.swift in Sources */,
 				35BACCBA207100B200A86ED2 /* NewsCategory.swift in Sources */,
-				35BACC9B20700BFF00A86ED2 /* UserModel.swift in Sources */,
 				3553381B206552DF002DC6C2 /* Global.swift in Sources */,
 				35C11157206D612000CEE45C /* DBUser.swift in Sources */,
+				35BACCBC20710EBA00A86ED2 /* UserModel.swift in Sources */,
 				35C1114D206D3DB400CEE45C /* GenderPickerViewController.swift in Sources */,
 				355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */,
 				355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */,

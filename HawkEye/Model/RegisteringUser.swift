@@ -20,7 +20,7 @@ class RegisteringUser {
     func toDB() -> DBUser {
         let user = DBUser()
         user.userName = userName!
-        user.password = password!.md5()
+        user.password = (userName! + password!).md5()
         user.gender = gender!.rawValue
         user.ageGroup = ageGroup!.rawValue
         // TODO: Write UserModel
