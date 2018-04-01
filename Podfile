@@ -1,6 +1,6 @@
 platform :ios, '9.0'
 use_frameworks!
-# inhibit_all_warnings!
+inhibit_all_warnings!
 
 target 'HawkEye' do
     pod 'Alamofire', '~> 4.7'
