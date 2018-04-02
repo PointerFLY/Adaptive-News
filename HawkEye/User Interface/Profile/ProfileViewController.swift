@@ -34,7 +34,7 @@ class ProfileViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2, 1][section]
+        return [3, 1][section]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,9 +51,9 @@ class ProfileViewController: UITableViewController {
             cell.textLabel?.text = "Gender"
             cell.detailTextLabel?.text = AccountManager.shared.currentUser?.gender.description
         case (0, 2):
-            cell = UITableViewCell()
+            cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
             cell.textLabel?.text = "Age"
-            cell.detailTextLabel?.text = "19"
+            cell.detailTextLabel?.text = AccountManager.shared.currentUser?.ageGroup.description
         case (1, 0):
             cell = UITableViewCell()
             cell.textLabel?.text = "Sign Out"
@@ -71,7 +71,7 @@ class ProfileViewController: UITableViewController {
         
         switch (indexPath.section, indexPath.row) {
         case (1, 0):
-            let alertController = UIAlertController(title: "Are you sure?", message: "Local data will be restored when you sign in again. However, your local data will be cleaned when another user signed in.", preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: "Are you sure?", message: "Local data will be restored when you sign in again. However, your local data may lost when another user signed in.", preferredStyle: .actionSheet)
             alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in
                 AccountManager.shared.logout()
             }))
