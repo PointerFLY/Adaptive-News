@@ -17,15 +17,19 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        for _ in 0...5 {
-            let tag = AccountManager.shared.userModel!.nextTag
-            let news = NewsProvider.shared.getNews(tag: tag)
-            _newsList.append(news)
+        for _ in 0..<5 {
+            pushNews()
         }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func pushNews() {
+        let tag = AccountManager.shared.userModel!.nextTag
+        let news = NewsProvider.shared.getNews(tag: tag)
+        _newsList.append(news)
     }
     
     override func viewDidLoad() {
@@ -106,13 +110,17 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
         koloda.reloadData()
     }
     
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        pushNews()
+    }
+    
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         let viewController = SFSafariViewController(url: _newsList[index].url)
         self.present(viewController, animated: true, completion: nil)
     }
     
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        return _newsList.count
+        return Int.max
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {

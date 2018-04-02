@@ -26,7 +26,8 @@ class UserModel {
     }
     
     var nextTag: String {
-        return "Football"
+        let index = Int(arc4random_uniform(UInt32(G.News.kTags.count)))
+        return G.News.kTags[index]
     }
     
     func like(tag: String) {
