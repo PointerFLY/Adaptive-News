@@ -14,7 +14,7 @@ class UserModel {
     private static let kInitialTagScore = 0.25
     private static let kIncreaseFactor = 0.9
     private static let kDecreaseFactor = 1.25
-    private static let kExploreRate = 0.05
+    private static let kExploreRate = 0.01
 
     private var _dbUser: DBUser?
     private var _tagScores: List<DBTagScore> {
@@ -38,6 +38,8 @@ class UserModel {
         try! Realm().write {
             _tagScores[index].score = score
         }
+        
+        ModelRecord.shared.log(tagScores: _tagScores)
     }
     
     func dislike(tag: String) {
@@ -49,6 +51,8 @@ class UserModel {
             try! Realm().write {
                 _tagScores[index].score = score
             }
+            
+            ModelRecord.shared.log(tagScores: _tagScores)
         }
     }
 }
@@ -67,6 +71,8 @@ extension UserModel {
                 dbUser.tagScores.append(dbTagScore)
             }
         }
+        
+        ModelRecord.shared.log(tagScores: dbUser.tagScores)
     }
     
     static func getTopicWeights(gender: Gender, ageGroup: AgeGroup, topics: Set<String>) -> [String: Double] {

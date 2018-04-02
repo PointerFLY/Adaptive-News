@@ -20,8 +20,7 @@ class ModelRecordViewController: UIViewController {
         _textView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
-        ModelRecord.shared.register(textView: _textView)
+        _textView.text = ModelRecord.shared.currentLog
     }
     
     private var _textView: UITextView = {

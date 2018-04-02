@@ -13,19 +13,12 @@ class ModelRecord {
 
     static let shared = ModelRecord()
     
-    private var _textViews = [UITextView]()
-    
-    func register(textView: UITextView) {
-        _textViews.append(textView)
-    }
+    private(set) var currentLog = ""
     
     func log(tagScores: List<DBTagScore>) {
-        var log = ""
         for tagScore in tagScores {
-            log += String(format: "%s: %f; ", tagScore.name, tagScore.score)
+            currentLog += String(format: "%@-%.2f ", tagScore.name, tagScore.score)
         }
-        for textView in _textViews {
-            textView.text.append(log)
-        }
+        currentLog += "\n\n"
     }
 }

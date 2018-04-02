@@ -112,6 +112,14 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         pushNews()
+        let tag = _newsList[index].tag
+        if direction == .left {
+            AccountManager.shared.userModel?.dislike(tag: tag)
+        } else if direction == .right {
+            AccountManager.shared.userModel?.like(tag: tag)
+        } else {
+            Log.error("Error swipe direction")
+        }
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
