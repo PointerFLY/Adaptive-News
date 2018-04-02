@@ -30,6 +30,7 @@ PODS:
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
   - SwiftyImage (1.2.0)
+  - SwiftyJSON (4.0.0)
   - SwiftyUserDefaults (3.0.1)
   - Yaml (3.4.2)
 
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SVProgressHUD (~> 2.2.5)
   - SwiftyImage (~> 1.2)
+  - SwiftyJSON (~> 4.0.0)
   - SwiftyUserDefaults (~> 3.0.1)
   - Yaml (~> 3.4.2)
 
@@ -62,9 +64,10 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyImage: ebaa7c7b6163cd4ad102f3bb05a8fb276d35b4f3
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   Yaml: 608d95686ff5b814eabc9faa7d3d1ac8d874c5e0
 
-PODFILE CHECKSUM: c936aeb003967d890faf127b1b17030de70197bf
+PODFILE CHECKSUM: 470a4086831a68427babb4a5cc70d1e553f64284
 
 COCOAPODS: 1.4.0

@@ -17,10 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController();
         window?.makeKeyAndVisible()
-        
-        G.setup()
-        Log.debug(NSHomeDirectory())
     
+        Log.debug(NSHomeDirectory())
+        G.setup()
+        _ = NewsProvider.shared
+//        NewsProvider.shared.fetchAll()
+        
         return true
     }
 

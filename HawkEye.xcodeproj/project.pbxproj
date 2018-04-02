@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3552E57E207266F20054254E /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E57D207266F20054254E /* News.swift */; };
 		355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355337EB206511A8002DC6C2 /* AppDelegate.swift */; };
 		355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355337ED206511A8002DC6C2 /* RootViewController.swift */; };
 		355337F3206511A8002DC6C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 355337F2206511A8002DC6C2 /* Assets.xcassets */; };
@@ -19,7 +20,7 @@
 		35533817206547F9002DC6C2 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35533816206547F9002DC6C2 /* NotificationNames.swift */; };
 		3553381920654E91002DC6C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381820654E91002DC6C2 /* ProfileViewController.swift */; };
 		3553381B206552DF002DC6C2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381A206552DF002DC6C2 /* Global.swift */; };
-		3553381E2066757A002DC6C2 /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsFetcher.swift */; };
+		3553381E2066757A002DC6C2 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553381C2065571C002DC6C2 /* NewsProvider.swift */; };
 		3553382E2066932C002DC6C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553382D2066932C002DC6C2 /* Gender.swift */; };
 		35BACCBA207100B200A86ED2 /* NewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BACCB9207100B200A86ED2 /* NewsCategory.swift */; };
 		35BACCBF2071B7B200A86ED2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BACCBE2071B7B200A86ED2 /* UserModel.swift */; };
@@ -50,6 +51,7 @@
 		0760B40798D64BD04F86595A /* Pods-hawkEye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hawkEye.release.xcconfig"; path = "Pods/Target Support Files/Pods-hawkEye/Pods-hawkEye.release.xcconfig"; sourceTree = "<group>"; };
 		0F16172E164518CE91CD3071 /* Pods-HawkEye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HawkEye.release.xcconfig"; path = "Pods/Target Support Files/Pods-HawkEye/Pods-HawkEye.release.xcconfig"; sourceTree = "<group>"; };
 		1CA409F2AB97E248FFF44F66 /* Pods_HawkEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HawkEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3552E57D207266F20054254E /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		355337E8206511A8002DC6C2 /* HawkEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HawkEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		355337EB206511A8002DC6C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		355337ED206511A8002DC6C2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		35533816206547F9002DC6C2 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		3553381820654E91002DC6C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3553381A206552DF002DC6C2 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		3553381C2065571C002DC6C2 /* NewsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFetcher.swift; sourceTree = "<group>"; };
+		3553381C2065571C002DC6C2 /* NewsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
 		3553382D2066932C002DC6C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		35BACCB9207100B200A86ED2 /* NewsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategory.swift; sourceTree = "<group>"; };
 		35BACCBE2071B7B200A86ED2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -221,7 +223,7 @@
 		3553382A20667869002DC6C2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				3553381C2065571C002DC6C2 /* NewsFetcher.swift */,
+				3553381C2065571C002DC6C2 /* NewsProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -266,6 +268,7 @@
 			children = (
 				35C11154206D509700CEE45C /* RegisteringUser.swift */,
 				35C1115C206D775A00CEE45C /* User.swift */,
+				3552E57D207266F20054254E /* News.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyImage/SwiftyImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
@@ -429,6 +433,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Yaml.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
@@ -478,7 +483,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3553381E2066757A002DC6C2 /* NewsFetcher.swift in Sources */,
+				3553381E2066757A002DC6C2 /* NewsProvider.swift in Sources */,
+				3552E57E207266F20054254E /* News.swift in Sources */,
 				35BACCBF2071B7B200A86ED2 /* UserModel.swift in Sources */,
 				35EEEAED2067CAE00037B975 /* NavigationController.swift in Sources */,
 				3553382E2066932C002DC6C2 /* Gender.swift in Sources */,

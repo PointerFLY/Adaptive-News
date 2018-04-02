@@ -15,6 +15,7 @@ extension DefaultsKeys {
     static let userName = DefaultsKey<String?>("userName")
     static let token = DefaultsKey<String?>("token")
     static let gender = DefaultsKey<Int?>("gender")
+    static let lastNewsFetchDate = DefaultsKey<Date?>("gender")
 }
 
 class KeyValueStore {
@@ -42,6 +43,17 @@ class KeyValueStore {
         set {
             Defaults[.userName] = newValue
             Defaults.synchronize();
+        }
+    }
+    
+    static var lastNewsFetchDate: Date {
+        get {
+            let date = Defaults[.lastNewsFetchDate] ?? Date(timeIntervalSince1970: 0.0)
+            return date
+        }
+        set {
+            Defaults[.lastNewsFetchDate] = newValue
+            Defaults.synchronize()
         }
     }
     

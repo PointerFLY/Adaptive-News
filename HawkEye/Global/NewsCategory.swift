@@ -22,7 +22,7 @@ extension G {
         }
         
         static var kTagURNs: [String: String] = {
-            var tagURNs: [String: String]!
+            var tagURNs = [String: String]()
             for value in kCategory.values {
                 tagURNs.merge(value) { (_, new) in new }
             }
@@ -71,9 +71,9 @@ extension G {
                 "Fashion": "section=fashion",
                 "Recipe": "q=recipe&section=lifeandstyle",
                 "Food": "q=food&section=lifeandstyle",
-                "Health & Fitness": "q=health|fitness&section=lifeandstyle",
-                "Home & Garden": "q=home|garden&section=lifeandstyle",
-                "Love & Sex": "q=love|sex&section=lifeandstyle",
+                "Health & Fitness": "q=health%20OR%20fitness&section=lifeandstyle",
+                "Home & Garden": "q=home%20OR%20garden&section=lifeandstyle",
+                "Love & Sex": "q=love%20OR%20sex&section=lifeandstyle",
                 "Family": "q=family&section=lifeandstyle",
                 "Money": "q=money&section=lifeandstyle",
             ],
