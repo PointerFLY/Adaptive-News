@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3552E57E207266F20054254E /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E57D207266F20054254E /* News.swift */; };
 		3552E582207274B90054254E /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E581207274B90054254E /* CustomOverlayView.swift */; };
+		3552E584207282EA0054254E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E583207282EA0054254E /* CardView.swift */; };
 		355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355337EB206511A8002DC6C2 /* AppDelegate.swift */; };
 		355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355337ED206511A8002DC6C2 /* RootViewController.swift */; };
 		355337F3206511A8002DC6C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 355337F2206511A8002DC6C2 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		1CA409F2AB97E248FFF44F66 /* Pods_HawkEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HawkEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3552E57D207266F20054254E /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		3552E581207274B90054254E /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		3552E583207282EA0054254E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		355337E8206511A8002DC6C2 /* HawkEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HawkEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		355337EB206511A8002DC6C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		355337ED206511A8002DC6C2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				3553381020653D17002DC6C2 /* HomeViewController.swift */,
 				3552E581207274B90054254E /* CustomOverlayView.swift */,
+				3552E583207282EA0054254E /* CardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				3553381B206552DF002DC6C2 /* Global.swift in Sources */,
 				35C11157206D612000CEE45C /* DBUser.swift in Sources */,
 				35C1114D206D3DB400CEE45C /* GenderPickerViewController.swift in Sources */,
+				3552E584207282EA0054254E /* CardView.swift in Sources */,
 				355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */,
 				355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */,
 				35C11149206D390B00CEE45C /* RegisterNextViewController.swift in Sources */,

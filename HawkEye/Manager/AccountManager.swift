@@ -17,6 +17,7 @@ class AccountManager {
         if isLogin {
             let dbUser = try! Realm().object(ofType: DBUser.self, forPrimaryKey: KeyValueStore.lastUserName!)
             currentUser = User(dbUser: dbUser!)
+            userModel = UserModel(user: currentUser!)
         }
     }
     

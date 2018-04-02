@@ -25,6 +25,10 @@ class UserModel {
         _dbUser = try! Realm().object(ofType: DBUser.self, forPrimaryKey: user.userName)
     }
     
+    var nextTag: String {
+        return "Football"
+    }
+    
     func like(tag: String) {
         let index = _tagScores.index { $0.name == tag }!
         var score = _tagScores[index].score
