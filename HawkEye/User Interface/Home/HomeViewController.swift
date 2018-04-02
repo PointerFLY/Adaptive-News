@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
         
         setupNavigation()
         setupUI()
+        setupEvents()
     }
     
     private func setupNavigation() {
@@ -60,6 +61,15 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
         _kolodaView.delegate = self
     }
     
+    private func setupEvents() {
+        _dislikeButton.bk_addEventHandler({ [unowned self] _ in
+            self._kolodaView.swipe(.left)
+        }, for: .touchUpInside)
+        _likeButton.bk_addEventHandler({ [unowned self] _ in
+            self._kolodaView.swipe(.right)
+        }, for: .touchUpInside)
+    }
+    
     private let _dislikeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "btn_dislike"), for: .normal)
@@ -81,17 +91,8 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
         self.present(viewController, animated: true, completion: nil)
     }
     
-    let images: [UIImage] = {
-        var images = [UIImage]()
-        for _ in 1...1000 {
-            let image = UIImage.size(CGSize(width: 1.0, height: 1.0)).color(.red).image
-            images.append(image)
-        }
-        return images
-    }()
-    
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        return images.count
+        return 1000
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -99,14 +100,15 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        let imageView = UIImageView(image: images[index])
-        imageView.layer.cornerRadius = 8
-        imageView.clipsToBounds = true
-        return imageView
+        let textView = UITextView()
+        textView.text = "Display"
+        textView.layer.cornerRadius = 8.0
+        textView.clipsToBounds = true
+        return textView
     }
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-        let view = OverlayView()
+        let view = CustomOverlayView()
         view.backgroundColor = UIColor.cyan.alpha(0.5)
         return view
     }
