@@ -29,10 +29,10 @@ PODS:
     - Realm (= 3.3.1)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
+  - SwiftSoup (1.7.0)
   - SwiftyImage (1.2.0)
   - SwiftyJSON (4.0.0)
   - SwiftyUserDefaults (3.0.1)
-  - Yaml (3.4.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -45,10 +45,10 @@ DEPENDENCIES:
   - RealmSwift (~> 3.1)
   - SnapKit (~> 4.0.0)
   - SVProgressHUD (~> 2.2.5)
+  - SwiftSoup (~> 1.7.0)
   - SwiftyImage (~> 1.2)
   - SwiftyJSON (~> 4.0.0)
   - SwiftyUserDefaults (~> 3.0.1)
-  - Yaml (~> 3.4.2)
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
@@ -63,11 +63,11 @@ SPEC CHECKSUMS:
   RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftSoup: b45f7bbf9807100c681b3a52c60450c04e0378ef
   SwiftyImage: ebaa7c7b6163cd4ad102f3bb05a8fb276d35b4f3
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
-  Yaml: 608d95686ff5b814eabc9faa7d3d1ac8d874c5e0
 
-PODFILE CHECKSUM: 470a4086831a68427babb4a5cc70d1e553f64284
+PODFILE CHECKSUM: 444e7f4ba3ff4f34bc882ff834e08ca518e163ab
 
 COCOAPODS: 1.4.0

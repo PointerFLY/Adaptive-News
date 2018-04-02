@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        for _ in 0...15 {
+        for _ in 0...5 {
             let tag = AccountManager.shared.userModel!.nextTag
             let news = NewsProvider.shared.getNews(tag: tag)
             _newsList.append(news)
@@ -39,11 +39,16 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     
     private func setupNavigation() {
         self.title = "HawkEye NEWS"
-        let item = UIBarButtonItem()
-        item.bk_init(with: UIImage(named: "btn_me")!, style: .plain) { _ in
+        let rightItem = UIBarButtonItem()
+        rightItem.bk_init(with: UIImage(named: "btn_me")!, style: .plain) { _ in
             self.navigationController?.pushViewController(ProfileViewController(), animated: true);
         }
-        self.navigationItem.rightBarButtonItem = item
+        self.navigationItem.rightBarButtonItem = rightItem
+        let leftItem = UIBarButtonItem()
+        leftItem.bk_init(with: UIImage(named: "btn_record")!, style: .plain) { _ in
+            self.navigationController?.pushViewController(ModelRecordViewController(), animated: true)
+        }
+        self.navigationItem.leftBarButtonItem = leftItem
     }
     
     private func setupUI() {

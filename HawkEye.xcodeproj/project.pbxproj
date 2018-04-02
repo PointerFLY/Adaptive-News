@@ -11,7 +11,8 @@
 		3552E582207274B90054254E /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E581207274B90054254E /* CustomOverlayView.swift */; };
 		3552E584207282EA0054254E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E583207282EA0054254E /* CardView.swift */; };
 		3552E58820729B260054254E /* ModelRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E58720729B260054254E /* ModelRecordViewController.swift */; };
-		3552E58A20729DED0054254E /* UserModelLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E58920729DED0054254E /* UserModelLog.swift */; };
+		3552E58A20729DED0054254E /* ModelRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E58920729DED0054254E /* ModelRecord.swift */; };
+		3552E58E2072DDA20054254E /* DBNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552E58D2072DDA20054254E /* DBNews.swift */; };
 		355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355337EB206511A8002DC6C2 /* AppDelegate.swift */; };
 		355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355337ED206511A8002DC6C2 /* RootViewController.swift */; };
 		355337F3206511A8002DC6C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 355337F2206511A8002DC6C2 /* Assets.xcassets */; };
@@ -59,7 +60,8 @@
 		3552E581207274B90054254E /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		3552E583207282EA0054254E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3552E58720729B260054254E /* ModelRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRecordViewController.swift; sourceTree = "<group>"; };
-		3552E58920729DED0054254E /* UserModelLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelLog.swift; sourceTree = "<group>"; };
+		3552E58920729DED0054254E /* ModelRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRecord.swift; sourceTree = "<group>"; };
+		3552E58D2072DDA20054254E /* DBNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNews.swift; sourceTree = "<group>"; };
 		355337E8206511A8002DC6C2 /* HawkEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HawkEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		355337EB206511A8002DC6C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		355337ED206511A8002DC6C2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				35C11156206D612000CEE45C /* DBUser.swift */,
 				3553381420654467002DC6C2 /* KeyValueStore.swift */,
+				3552E58D2072DDA20054254E /* DBNews.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -244,7 +247,7 @@
 			children = (
 				35533812206542CE002DC6C2 /* AccountManager.swift */,
 				35BACCBE2071B7B200A86ED2 /* UserModel.swift */,
-				3552E58920729DED0054254E /* UserModelLog.swift */,
+				3552E58920729DED0054254E /* ModelRecord.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -499,7 +502,7 @@
 				3552E57E207266F20054254E /* News.swift in Sources */,
 				3552E58820729B260054254E /* ModelRecordViewController.swift in Sources */,
 				3552E582207274B90054254E /* CustomOverlayView.swift in Sources */,
-				3552E58A20729DED0054254E /* UserModelLog.swift in Sources */,
+				3552E58A20729DED0054254E /* ModelRecord.swift in Sources */,
 				35BACCBF2071B7B200A86ED2 /* UserModel.swift in Sources */,
 				35EEEAED2067CAE00037B975 /* NavigationController.swift in Sources */,
 				3553382E2066932C002DC6C2 /* Gender.swift in Sources */,
@@ -513,6 +516,7 @@
 				35C1114D206D3DB400CEE45C /* GenderPickerViewController.swift in Sources */,
 				3552E584207282EA0054254E /* CardView.swift in Sources */,
 				355337EE206511A8002DC6C2 /* RootViewController.swift in Sources */,
+				3552E58E2072DDA20054254E /* DBNews.swift in Sources */,
 				355337EC206511A8002DC6C2 /* AppDelegate.swift in Sources */,
 				35C11149206D390B00CEE45C /* RegisterNextViewController.swift in Sources */,
 				35EEEAF32067D4F40037B975 /* RegisterViewController.swift in Sources */,

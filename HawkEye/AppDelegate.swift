@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Log.debug(NSHomeDirectory())
+        G.setup()
+        //        NewsProvider.shared.fetchAllIfNeeded()
+        NewsProvider.shared.loadNews()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController();
         window?.makeKeyAndVisible()
-    
-        Log.debug(NSHomeDirectory())
-        G.setup()
-        _ = NewsProvider.shared
-//        NewsProvider.shared.fetchAll()
         
         return true
     }
