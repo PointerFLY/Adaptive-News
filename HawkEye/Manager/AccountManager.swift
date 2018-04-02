@@ -20,12 +20,15 @@ class AccountManager {
         }
     }
     
-    var currentUser: User?
+    private(set) var currentUser: User?
+    
+    private(set) var userModel: UserModel?
     
     var isLogin: Bool {
         return KeyValueStore.token != nil
             && KeyValueStore.lastUserName != nil
     }
+    
     
     func login(userName: String, password: String, success: @escaping () -> Void, failure: @escaping (String) -> Void) {
         DispatchQueue.global().async {
@@ -40,6 +43,7 @@ class AccountManager {
                         let user = User(dbUser: dbUser)
                         DispatchQueue.main.async {
                             self.currentUser = user
+                            self.userModel = UserModel(user: user)
                             success()
                             NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self)
                         }
@@ -95,6 +99,7 @@ class AccountManager {
     func logout() {
         KeyValueStore.token = nil
         currentUser = nil
+        userModel = nil
         NotificationCenter.default.post(name: NotificationNames.kLoginStatusChanged, object: self);
     }
 }

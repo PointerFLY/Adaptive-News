@@ -18,13 +18,13 @@ class RegisteringUser {
     var preferredTopics = Set<String>()
     
     func toDB() -> DBUser {
-        let user = DBUser()
-        user.userName = userName!
-        user.password = (userName! + password!).md5()
-        user.gender = gender!.rawValue
-        user.ageGroup = ageGroup!.rawValue
-        // TODO: Write UserModel
-        
-        return user
+        let dbUser = DBUser()
+        dbUser.userName = userName!
+        dbUser.password = (userName! + password!).md5()
+        dbUser.gender = gender!.rawValue
+        dbUser.ageGroup = ageGroup!.rawValue
+        UserModel.setTagScores(dbUser: dbUser, withUser: self)
+
+        return dbUser
     }
 }

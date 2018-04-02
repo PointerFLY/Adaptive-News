@@ -57,7 +57,7 @@ class RegisterNextViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2, G.News.topics.count][section]
+        return [2, G.News.kTopics.count][section]
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -81,7 +81,7 @@ class RegisterNextViewController: UITableViewController {
             cell.accessoryType = .disclosureIndicator
         case (1, _):
             cell = UITableViewCell()
-            cell.textLabel?.text = G.News.topics[indexPath.row]
+            cell.textLabel?.text = G.News.kTopics[indexPath.row]
         default:
             cell = nil
         }
@@ -116,7 +116,7 @@ class RegisterNextViewController: UITableViewController {
             self.navigationController?.pushViewController(viewController, animated: true)
         case (1, _):
             let cell = tableView.cellForRow(at: indexPath)!
-            let topic = G.News.topics[indexPath.row]
+            let topic = G.News.kTopics[indexPath.row]
             let isChoosed = _registeringUser.preferredTopics.contains(topic)
             if isChoosed {
                 cell.accessoryType = .none

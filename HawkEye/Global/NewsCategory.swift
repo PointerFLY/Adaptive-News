@@ -10,23 +10,27 @@ import UIKit
 
 extension G {
     struct News {
-        static var topics: [String] = {
-            let keys = category.keys
+        static var kTopics: [String] = {
+            let keys = kCategory.keys
             let topics = Array(keys)
             
             return topics
         }()
         
-        static var tags: [String] = {
-            var tags: [String]!
-            for key in category.keys {
-                tags = Array(category[key]!.keys)
+        static var kTags: [String] {
+            return Array(kTagURNs.keys)
+        }
+        
+        static var kTagURNs: [String: String] = {
+            var tagURNs: [String: String]!
+            for value in kCategory.values {
+                tagURNs.merge(value) { (_, new) in new }
             }
             
-            return tags
+            return tagURNs
         }()
         
-        static let category: [String: [String : String]] = [
+        static let kCategory: [String: [String : String]] = [
             "Sport": [
                 "Football": "section=football",
                 "Rugby Union": "q=rugby-union&section=sport",
