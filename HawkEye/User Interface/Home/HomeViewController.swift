@@ -139,6 +139,10 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        koloda.layer.shadowColor = UIColor.black.alpha(0.5).cgColor
+        koloda.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+        koloda.layer.shadowOpacity = 0.2
+        koloda.layer.shadowRadius = 2.0
         let news = _newsList[index]
         let cardView = CardView(title: news.title, tag: news.tag, imageURL: news.imageURL)
         return cardView

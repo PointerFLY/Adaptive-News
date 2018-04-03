@@ -40,9 +40,7 @@ class NewsProvider {
     
     func fetchAllImageURL() {
         let realm = try! Realm()
-        let dbNewsList = try! realm.objects(DBNews.self).filter { $0.imageURL == nil }
-        
-        print(dbNewsList.count)
+        let dbNewsList = realm.objects(DBNews.self).filter { $0.imageURL == nil }
         
         for dbNews in dbNewsList {
             Alamofire.request(dbNews.url).responseString { response in
