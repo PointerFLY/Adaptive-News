@@ -146,7 +146,6 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         let view = CustomOverlayView()
-        view.backgroundColor = UIColor.cyan.alpha(0.5)
         return view
     }
 }

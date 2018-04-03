@@ -25,9 +25,9 @@ class CustomOverlayView: OverlayView {
         didSet {
             switch overlayState {
             case .left? :
-                self.backgroundColor = UIColor(hex: "dd5452")
+                self.backgroundColor = UIColor(hex: "dd5452").alpha(0.5)
             case .right? :
-                self.backgroundColor = UIColor(hex: "53c84f")
+                self.backgroundColor = UIColor(hex: "53c84f").alpha(0.5)
             default:
                 self.backgroundColor = UIColor.white.alpha(0)
             }

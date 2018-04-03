@@ -24,15 +24,15 @@ class CardView: UIView {
         self.addSubview(_imageView)
 
         _textView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-8)
+            make.left.equalToSuperview().offset(8)
+            make.right.equalToSuperview().offset(-8)
             make.height.equalTo(120)
         }
         _imageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.left.equalToSuperview().offset(-30)
+            make.right.equalToSuperview().offset(30)
             make.bottom.equalTo(_textView.snp.top).offset(-8)
         }
     }
@@ -50,7 +50,7 @@ class CardView: UIView {
         let textView = UITextView()
         textView.isEditable = false
         textView.isSelectable = false
-        textView.font = UIFont.boldSystemFont(ofSize: 20)
+        textView.font = UIFont.boldSystemFont(ofSize: 22)
         textView.isScrollEnabled = false
         return textView
     }()

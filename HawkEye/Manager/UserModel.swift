@@ -33,26 +33,28 @@ class UserModel {
     func like(tag: String) {
         let index = _tagScores.index { $0.name == tag }!
         var score = _tagScores[index].score
+        let old = score
         score = (pow(UserModel.kIncreaseFactor, score) - 1.0) / (UserModel.kIncreaseFactor - 1.0)
         
         try! Realm().write {
             _tagScores[index].score = score
         }
         
-        ModelRecord.shared.log(tagScores: _tagScores)
+        ModelRecord.shared.log(tag: tag, old: old, new: score)
     }
     
     func dislike(tag: String) {
         let index = _tagScores.index { $0.name == tag }!
         var score = _tagScores[index].score
         if score > UserModel.kExploreRate {
+            let old = score
             score = (pow(UserModel.kDecreaseFactor, score) - 1.0) / (UserModel.kDecreaseFactor - 1.0)
             
             try! Realm().write {
                 _tagScores[index].score = score
             }
             
-            ModelRecord.shared.log(tagScores: _tagScores)
+            ModelRecord.shared.log(tag: tag, old: old, new: score)
         }
     }
 }

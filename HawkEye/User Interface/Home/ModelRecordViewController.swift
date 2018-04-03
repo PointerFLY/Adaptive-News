@@ -27,6 +27,7 @@ class ModelRecordViewController: UIViewController {
         let textView = UITextView()
         textView.isEditable = false
         textView.isSelectable = false
+        textView.font = UIFont.systemFont(ofSize: 16)
         textView.backgroundColor = G.UI.kViewColorDefault
         return textView
     }()
