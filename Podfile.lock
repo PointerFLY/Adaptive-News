@@ -18,6 +18,7 @@ PODS:
   - CryptoSwift (0.8.3)
   - Hue (3.0.1)
   - KeychainAccess (3.1.0)
+  - Kingfisher (4.6.4)
   - Koloda (4.3.1):
     - pop (~> 1.0)
   - Log (1.0)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - CryptoSwift (~> 0.8.3)
   - Hue (~> 3.0.1)
   - KeychainAccess (~> 3.1.0)
+  - Kingfisher
   - Koloda (~> 4.3.1)
   - Log (~> 1.0)
   - RealmSwift (~> 3.1)
@@ -56,6 +58,7 @@ SPEC CHECKSUMS:
   CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   Log: 5e368c9528db07517d18d2d04ff5fe2b6f5a1e21
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
@@ -68,6 +71,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 444e7f4ba3ff4f34bc882ff834e08ca518e163ab
+PODFILE CHECKSUM: f1c0ee09b9d190f34adee0483469dd512b8ac9ef
 
 COCOAPODS: 1.4.0

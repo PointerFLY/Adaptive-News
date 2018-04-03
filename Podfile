@@ -17,4 +17,5 @@ target 'HawkEye' do
     pod 'CryptoSwift', '~> 0.8.3'
     pod 'SwiftyJSON', '~> 4.0.0'
     pod 'SwiftSoup', '~> 1.7.0'
+    pod 'Kingfisher'
 end

@@ -38,6 +38,32 @@ class NewsProvider {
         return _newsDict[tag]!.removeFirst()
     }
     
+    func fetchAllImageURL() {
+        let realm = try! Realm()
+        let dbNewsList = try! realm.objects(DBNews.self).filter { $0.imageURL == nil }
+        
+        print(dbNewsList.count)
+        
+        for dbNews in dbNewsList {
+            Alamofire.request(dbNews.url).responseString { response in
+                let html = response.result.value!
+                let doc = try! SwiftSoup.parse(html)
+                let headImage = try! doc.select(".maxed.responsive-img").first()
+                var imageURL = try! headImage?.attr("src");
+                if imageURL == nil {
+                    imageURL = "https://i.guim.co.uk/img/media/17e75f5cd9af333c75a4e2369367795811c4a2cc/0_34_4370_2622/master/4370.jpg?w=300&q=55&auto=format&usm=12&fit=max&s=78eb55a6d96eee409e0b181fb4410254"
+                }
+                
+                try! realm.write {
+                    let dbNewsList = realm.objects(DBNews.self).filter { $0.title == dbNews.title }
+                    for dbNews in dbNewsList {
+                        dbNews.imageURL = imageURL
+                    }
+                }
+            }
+        }
+    }
+    
     func fetchAllIfNeeded() {
         guard (Date().timeIntervalSince(KeyValueStore.lastNewsFetchDate) >= 60 * 60) else { return }
         

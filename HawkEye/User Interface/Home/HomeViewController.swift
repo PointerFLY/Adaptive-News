@@ -9,6 +9,9 @@
 import UIKit
 import Koloda
 import SafariServices
+import Alamofire
+import SwiftSoup
+import RealmSwift
 
 class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
     
@@ -136,8 +139,8 @@ class HomeViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSo
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        let cardView = CardView(title: _newsList[index].title)
-        cardView.backgroundColor = UIColor.white
+        let news = _newsList[index]
+        let cardView = CardView(title: news.title, tag: news.tag, imageURL: news.imageURL)
         return cardView
     }
     
