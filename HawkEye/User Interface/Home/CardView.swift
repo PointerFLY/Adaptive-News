@@ -50,7 +50,7 @@ class CardView: UIView {
         let textView = UITextView()
         textView.isEditable = false
         textView.isSelectable = false
-        textView.font = UIFont.boldSystemFont(ofSize: 22)
+        textView.font = UIFont.boldSystemFont(ofSize: 28)
         textView.isScrollEnabled = false
         return textView
     }()
