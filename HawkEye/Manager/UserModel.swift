@@ -25,8 +25,26 @@ class UserModel {
         _dbUser = try! Realm().object(ofType: DBUser.self, forPrimaryKey: user.userName)
     }
     
+    /// Weighted random tag
     var nextTag: String {
-        let index = Int(arc4random_uniform(UInt32(G.News.kTags.count)))
+        let kScale = 1000.0
+
+        var sum = 0.0;
+        _tagScores.forEach { sum += $0.score }
+        let target = Double(arc4random_uniform(UInt32(sum * kScale)));
+        
+        var partialSum = 0.0
+        var index = G.News.kTags.count - 1
+        for i in 0..<G.News.kTags.count - 1 {
+            partialSum += _tagScores[i].score * kScale
+            let next = partialSum + _tagScores[i + 1].score * kScale
+            
+            if partialSum <= target && next >= target {
+                index = i
+                break
+            }
+        }
+        
         return G.News.kTags[index]
     }
     
