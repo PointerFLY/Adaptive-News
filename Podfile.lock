@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.7.1)
+  - Alamofire (4.7.3)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -17,20 +17,20 @@ PODS:
     - BlocksKit/DynamicDelegate
   - CryptoSwift (0.8.3)
   - Hue (3.0.1)
-  - KeychainAccess (3.1.0)
-  - Kingfisher (4.6.4)
+  - KeychainAccess (3.1.1)
+  - Kingfisher (4.9.0)
   - Koloda (4.3.1):
     - pop (~> 1.0)
   - Log (1.0)
   - pop (1.0.10)
-  - Realm (3.3.1):
-    - Realm/Headers (= 3.3.1)
-  - Realm/Headers (3.3.1)
-  - RealmSwift (3.3.1):
-    - Realm (= 3.3.1)
-  - SnapKit (4.0.0)
+  - Realm (3.9.0):
+    - Realm/Headers (= 3.9.0)
+  - Realm/Headers (3.9.0)
+  - RealmSwift (3.9.0):
+    - Realm (= 3.9.0)
+  - SnapKit (4.0.1)
   - SVProgressHUD (2.2.5)
-  - SwiftSoup (1.7.0)
+  - SwiftSoup (1.7.2)
   - SwiftyImage (1.2.0)
   - SwiftyJSON (4.0.0)
   - SwiftyUserDefaults (3.0.1)
@@ -53,20 +53,20 @@ DEPENDENCIES:
   - SwiftyUserDefaults (~> 3.0.1)
 
 SPEC CHECKSUMS:
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
-  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   Log: 5e368c9528db07517d18d2d04ff5fe2b6f5a1e21
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
-  Realm: 63ebf4903b446b0bdf2131244eb1e1549925c724
-  RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
+  RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftSoup: b45f7bbf9807100c681b3a52c60450c04e0378ef
+  SwiftSoup: e5f61d37e3d802a4b5db81b4945de3da9bfdf115
   SwiftyImage: ebaa7c7b6163cd4ad102f3bb05a8fb276d35b4f3
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
