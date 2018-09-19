@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Log.debug(NSHomeDirectory())
         G.setup()
-//        NewsProvider.shared.fetchAllIfNeeded()
-//        NewsProvider.shared.fetchAllImageURL()
+        
+        let needed = NewsProvider.shared.fetchAllIfNeeded()
+        if needed { return true } // Fetch first, after it, open App again
+        
         NewsProvider.shared.loadNews()
         
         window = UIWindow(frame: UIScreen.main.bounds)
